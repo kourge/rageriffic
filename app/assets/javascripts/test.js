@@ -1,4 +1,4 @@
-function Upload(imagestream) {
+function UploadToImgur(imagestream) {
   $.post("http://api.imgur.com/2/upload.json",
          {key: "e0c2bcb83dab53d4d21d7fc77ef3f8c2",
           image: imagestream},
