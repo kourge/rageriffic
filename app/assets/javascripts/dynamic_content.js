@@ -1,6 +1,7 @@
 
 
 $(document).ready(function() {
+  $("joinbutton").click(switchToCapture);
   printStartButton();
   $(document).bind('roomFrozen', switchToCapture);
   $(document).bind('startVoting', switchToVote);
@@ -45,7 +46,7 @@ function takePicture() {
 function switchToVote(e, data) {
   clearInterval(intervalID);
   $("#contentcontainer :not(:first-child)").remove();
-  var rageFace = $('<div id = "ragefacecontainer"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
+  var rageFace = $('<div id = "ragefacecontainerX"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
   var form = $('<form id="voteform" action="" method="post">');
   var div1 = $('<div id="rowone">');
   var div2 = $('<div id = "rowtwo">');
