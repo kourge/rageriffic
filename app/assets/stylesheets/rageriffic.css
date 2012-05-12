@@ -160,7 +160,7 @@ input {
     background-image: url('vote.png');
 }
 
-#ragefacecontainer, #winnercontainer {
+#ragefacecontainer, #winnercontainer, #ragefacecontainerX {
     height: 213px;
     width: 293px;
     background-repeat: no-repeat;
@@ -177,7 +177,7 @@ input {
 
 
 
-#ragefacecontainer {
+#ragefacecontainer, #ragefacecontainerX {
     background-image: url('ragefacebg.png');
 }
 
