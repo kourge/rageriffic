@@ -50,4 +50,14 @@ class RoundsController < ApplicationController
 
     return ""
   end
+
+  def vote
+    cur_round = Round.find(params[:id])
+    v = Vote.new
+    v.round = cur_round
+    v.votee = params[:p_id]
+    v.save
+
+    return ""
+  end
 end
