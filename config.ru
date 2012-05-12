@@ -1,3 +1,4 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'app'
-run Rageriffic.new
+# This file is used by Rack-based servers to start the application.
+
+require ::File.expand_path('../config/environment',  __FILE__)
+run Rageriffic::Application
