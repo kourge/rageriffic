@@ -25,7 +25,7 @@ class RoundsController < ApplicationController
 
   def start
     cur_round = Round.find(params[:id])
-    cur_round.frozen = true;
+    cur_round.is_frozen = true;
     cur_round.save
 
     # empty page
@@ -58,6 +58,21 @@ class RoundsController < ApplicationController
 
     res = {}
     res["voting_done"] = (ps.size == vs.size)
+
+    render :json => res.to_json
+  end
+
+  def participations
+    res = []
+    cur_round = Round.find(params[:id])
+
+    cur_round.participations.each do |p|
+      cur = {}
+      cur["name"] = p.name
+      cur["face"] = p.face
+      cur["id"] = p.id
+      res << cur
+    end
 
     render :json => res.to_json
   end
