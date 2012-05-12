@@ -1,0 +1,38 @@
+#title, form, div.imagediv, #maincontent, #camerainterface, #status {
+	text-align: center;
+	margin: 20px;
+}
+
+#status {
+	clear: both;
+}
+
+form {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#rowone div, #rowtwo div{
+	display: inline;
+	text-align: center;
+	float: left;
+}
+
+input {
+	margin: 5px;
+}
+
+#userbar {
+	text-align: left;
+	width: 10%;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	border: 1px solid black;
+}
+
+#userbar ul {
+	margin: 0px;
+	padding: 1em;
+}
