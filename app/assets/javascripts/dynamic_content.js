@@ -16,17 +16,18 @@ function printStartButton() {
 }
 
 function switchToCapture() {
+  $("#addfriends").remove();
   $("#welcome").remove();
   $("#logo").removeClass("hidden");
   $("#camerainterface").removeClass('hidden');
-  var cameraButton = $('<button class="button" id="camerabutton"></button>').click(takePicture);
+  var cameraButton = $('<button onclick = "webcam.capture(3); void(0);" class="button" id="camerabutton"></button>').click(takePicture);
   $("#startbutton").remove();
   $("#contentcontainer h1").remove()
   var instr = $('<h1>try to imitate the rage face</h1>');
   $(instr).insertAfter($("#logo"));
-  $("#contentcontainer").append(cameraButton);
+  $(cameraButton).insertAfter($("#status"));
   //var rageFaceJSON = jQuery.parseJSON(getRageFace);
-  var header = $('<h1 class="imagetitle">selected rage face</h1>');
+  var header = $('<h1 id = "suggestedFace" class="imagetitle">selected rage face</h1>');
   var rageFace = $('<div id = "ragefacecontainer"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
   $("#contentcontainer").append(header);
   $("#contentcontainer").append(rageFace);
@@ -47,7 +48,7 @@ function waitForVoting () {
 
 function getTotalVotes() {
   clearInterval(intervalID);
-  switchToVote();
+  //switchToVote();
 }
 
 function switchToVote() {
