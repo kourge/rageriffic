@@ -19,7 +19,7 @@ class RoundsController < ApplicationController
     res = {}
     res["in_room"] = ps.count
     res["pics_taken"] = ps.select {|p| not p.face.nil? }.size
-    res["frozen"] = cur_round.frozen
+    res["is_frozen"] = cur_round.is_frozen
 
     render :json => res.to_json
   end
