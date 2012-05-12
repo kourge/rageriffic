@@ -1,9 +1,9 @@
 @font-face{
-    font-family: Fago; src: url('../fonts/fago.otf');
+    font-family: Fago; src: url('/public/fonts/fago.otf');
 }
 
 @font-face{
-    font-family: Fago; font-weight: bold; src: url('../fonts/fago_bold.otf');
+    font-family: Fago; font-weight: bold; src: url('/public/fonts/fago_bold.otf');
 }
 
 body {
