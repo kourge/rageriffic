@@ -1,6 +1,11 @@
 Rageriffic::Application.routes.draw do
   root :to => 'game#start_game'
-  resources :rounds
+  match 'rounds/new' => 'rounds#new'
+  match 'rounds/:id' => 'rounds#show'
+  match 'rounds/play/:id' => 'rounds#play'
+  match 'rounds/play' => 'rounds#play'
+  match 'rounds/state/:id' => 'rounds#state'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
