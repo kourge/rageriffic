@@ -12,6 +12,7 @@ class GameController < ApplicationController
   end
 
   def start_game
+    Rails.logger.debug "this sucks"
   end
 
   def take_picture
