@@ -20,6 +20,10 @@ class Rageriffic < Sinatra::Application
     mustache :startgame
   end
 
+  get '/host-start' do
+    mustache :"host-start"
+  end
+
   get '/db_test' do
     Round[0].inspect
   end
