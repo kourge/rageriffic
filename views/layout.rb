@@ -6,7 +6,7 @@ module Rageriffic::Views
 
     def css
       @css || [
-        { "path": "" }
+        { "path": '""' }
       ]
     end
   end
