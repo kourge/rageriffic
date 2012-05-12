@@ -1,6 +1,6 @@
 
 (function($) {
-var INTERVAL = 3000, GIVEUP = 5, ENABLE_POLLING = false;
+var INTERVAL = 3000, GIVEUP = 5, ENABLE_POLLING = true;
 var id, timer, i = 0;
 var previousFreeze = false, isFrozen = false;
 
