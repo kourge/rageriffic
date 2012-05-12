@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url('../images/bgpattern.png');
+    background-image: url('bgpattern.png');
     font-family: Fago, Cambria;
     padding: 0;
     margin: 0;
@@ -15,7 +15,7 @@ body {
 }
 
 #contentcontainer {
-    background-image: url('../images/contentbg.png');
+    background-image: url('contentbg.png');
     background-repeat: no-repeat;
     width: 1300px;
     margin-left: auto;
@@ -38,10 +38,6 @@ h1 {
 
 #title img{
     height: 135px;
-}
-
-.h1words {
-    text-align: center;
 }
 
 #title, form, #maincontent, #camerainterface, #status {
@@ -95,7 +91,7 @@ input {
     position: fixed;
     bottom: 0;
     right: 0;
-    background-image: url('../images/participants.png');
+    background-image: url('participants.png');
     width: 225px;
     height: 392px;
     background-repeat: no-repeat;
@@ -127,28 +123,28 @@ input {
     border: 0;
 }
 
-#takepicture {
+#camerabutton {
     width: 114px;
     padding-top: 81px;
-    background-image: url('../images/camerabutton.png');
+    background-image: url('camerabutton.png');
 }
 
 #startbutton {
     width: 109px;
     padding-top: 45px;
-    background-image: url('../images/startgame.png');
+    background-image: url('startgame.png');
 }
 
 #newgamebutton {
     width: 270px;
     padding-top: 47px;
-    background-image: url('../images/newgame.png');
+    background-image: url('newgame.png');
 }
 
 #joinbutton {
     width: 98px;
     padding-top: 59px;
-    background-image: url('../images/join.png');
+    background-image: url('join.png');
 }
 
 #submitvotebutton {
@@ -156,7 +152,7 @@ input {
     padding-top: 28px;
     position: relative;
     top: 20px;
-    background-image: url('../images/vote.png');
+    background-image: url('vote.png');
 }
 
 #ragefacecontainer, #winnerfacecontainer {
@@ -165,6 +161,7 @@ input {
     background-repeat: no-repeat;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 #rageface, #webcamcontainer object, #winnerfacecontainer {
@@ -174,15 +171,15 @@ input {
 
 
 #ragefacecontainer {
-    background-image: url('../images/ragefacebg.png');
+    background-image: url('ragefacebg.png');
 }
 
 #winnerfacecontainer {
-    background-image:url('../images/winner.png');
+    background-image:url('winner.png');
 }
 
 #webcamcontainer, .userimagecontainer {
-    background-image: url('../images/userpicbg.png');
+    background-image: url('userpicbg.png');
     height: 185px;
     width: 254px;
     background-repeat: no-repeat;
