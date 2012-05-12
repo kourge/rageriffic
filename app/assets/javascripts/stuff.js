@@ -1,7 +1,7 @@
 
 (function($) {
-var INTERVAL = 3000, ENABLE_POLLING = false;
-var id, timer;
+var INTERVAL = 3000, GIVEUP = 5, ENABLE_POLLING = false;
+var id, timer, i = 0;
 var previousFreeze = false, isFrozen = false;
 
 function loadParticipants() {
@@ -12,15 +12,17 @@ function loadParticipants() {
 }
 
 function beginVoting() {
+  i = 0
   timer = window.setInterval(function pollWinner() {
     $.getJSON('/rounds/voting/' + id, function(data) {
-      if (data.voting_done) {
+      if (data.voting_done || i == GIVEUP) {
         window.clearInterval(timer);
         $.getJSON('/rounds/winner/' + id, function(data) {
           $(document).trigger('winnerAnnounced', data);
         });
       }
     });
+    i++;
   }, INTERVAL);
 }
 
@@ -49,11 +51,12 @@ if (ENABLE_POLLING) timer = window.setInterval(function poll() {
     if (!previousFreeze && isFrozen) {
       $(document).trigger('roomFrozen');
     }
-    if (data.in_room == data.pic_taken) {
+    if (data.in_room == data.pic_taken || i == GIVEUP) {
       window.clearInterval(timer);
       loadParticipants();
     }
     previousFreeze = isFrozen;
+    i++;
   });
 }, INTERVAL);
 
