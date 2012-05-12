@@ -6,8 +6,3 @@ function Upload(imagestream) {
            console.log(data.upload.links.original);
           }, "json");
 }
-
-$(document).ready(function () {
-  var test = Upload();
-  console.log(test);
-});
