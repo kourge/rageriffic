@@ -4,7 +4,7 @@ module Rageriffic::Views
       @title || "Rageriffic"
     end
 
-    def path
+    def css
       @path || [
         { "path": "" }
       ]

@@ -4,7 +4,7 @@ module Rageriffic::Views
       "Rageriffic"
     end
 
-    def path
+    def css
       [
         { "path": "css/rageriffic.css" }
       ]
