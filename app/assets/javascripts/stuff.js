@@ -39,6 +39,8 @@ var params = (function(a) {
 
 window.isOwner = !!params.owner;
 window.rid = params.id;
+var parts = $('#addfriends h1.h1words strong').html().split('/');
+id = parts[parts.length - 1];
 
 $(document).bind('imageUploaded', function(event, url) {
   $.getJSON('/rounds/pic/' + id, {
