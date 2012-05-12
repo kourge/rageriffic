@@ -2,28 +2,30 @@
 <html>
     <head>
         <title>Rageriffic</title>
-         <%= stylesheet_link_tag "rageriffic.css" %>
-         <%= javascript_include_tag "javascripts/dynamic_content.js" %>
-         <script type="text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <%= stylesheet_link_tag "rageriffic.css" %>
+        <script type="text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <%= javascript_include_tag "dynamic_content.js" %>
+        <%=javascript_include_tag "jquery.webcam.js" %>
+        <%=javascript_include_tag "test.js" %>
     </head>
     
     <body>
         <div id = "contentcontainer">
-            <div id="title"><%= image_tag "welcome.png" %></div>
+            <div id = "welcome" class="title"><%= image_tag "welcome.png" %></div>
+            <div id = "logo" class="title hidden"><%= image_tag "ragerifficlogo.png" %></div>
 
             <div id="camerainterface">
-                <div class="imagediv">
-                    <h1 class="h1words">waiting for others to join</h1>
-                    <h1 class="h1words">be vain for a little bit</h1>
-                    <div class = "usersize" id = "webcamcontainer">
-                        <object id="webcam-object" width="320" height="240" data="../../../public/jscam_canvas_only.swf" type="application/x-shockwave-flash">
-                            <param value="../../../public/jscam_canvas_only.swf" name="movie">
-                            <param value="mode=callback&quality=85" name="FlashVars">
-                        </object>
-                    </div>
-                </div>
+            </div>
 
-                <button id="startbutton" class = "button"></button>
+            <div class="imagediv">
+                <h1>waiting for others to join</h1>
+                <h1>be vain for a little bit</h1>
+                <div class = "usersize" id = "webcamcontainer">
+                    <object id="webcam-object" width="320" height="240" data="../../../public/jscam_canvas_only.swf" type="application/x-shockwave-flash">
+                        <param value="../../../public/jscam_canvas_only.swf" name="movie">
+                        <param value="mode=callback&quality=85" name="FlashVars">
+                    </object>
+                </div>
             </div>
 
             <div id="userscount"

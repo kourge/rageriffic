@@ -32,15 +32,15 @@ h1 {
     text-align: center;
 }
 
-#title {
+.title {
     padding-top: 50px;
 }
 
-#title img{
+.title img{
     height: 135px;
 }
 
-#title, form, #maincontent, #camerainterface, #status {
+.title, form, #maincontent, #camerainterface, #status {
     text-align: center;
     margin: 20px;
 }
@@ -164,9 +164,13 @@ input {
     text-align: center;
 }
 
-#rageface, #webcamcontainer object, #winnerfacecontainer {
+#rageface, #webcamcontainer object, #winnerfacecontainer, #userimage {
     height: 90%;
     width: 80%;
+}
+
+#XwebcamXobjectX {
+    display: none;
 }
 
 
@@ -185,4 +189,8 @@ input {
     background-repeat: no-repeat;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hidden {
+    display: none;
 }
