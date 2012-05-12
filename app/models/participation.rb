@@ -1,3 +1,3 @@
 class Participation < ActiveRecord::Base
-  has_one :round
+  belongs_to :round
 end
