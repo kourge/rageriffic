@@ -2,3 +2,5 @@ config.yaml
 .*.swp
 .*.swo
 *.DS_Store
+tmp
+log/*.log
