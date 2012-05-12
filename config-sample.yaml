@@ -1,8 +1,3 @@
 
-db:
-  hostname: localhost
-  username: user
-  password: passw0rd
-  port: 3306
-  database: rageriffic_db
+db: "mysql://username:password@hostname/database"
 
