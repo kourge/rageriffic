@@ -1,6 +1,11 @@
 require 'sinatra'
-enable :sessions
+require 'sequel'
 
-get '/' do
-  "Hello, World!"
+class Rageriffic < Sinatra::Application
+  enable :sessions
+
+  get '/' do
+    "Hello, World!"
+  end
 end
+
