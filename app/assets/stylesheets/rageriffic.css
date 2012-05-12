@@ -133,25 +133,25 @@ input {
     background-image: url('../images/camerabutton.png');
 }
 
-#startButton {
+#startbutton {
     width: 109px;
     padding-top: 45px;
     background-image: url('../images/startgame.png');
 }
 
-#newGameButton {
+#newgamebutton {
     width: 270px;
     padding-top: 47px;
     background-image: url('../images/newgame.png');
 }
 
-#joinButton {
+#joinbutton {
     width: 98px;
     padding-top: 59px;
     background-image: url('../images/join.png');
 }
 
-#submitVoteButton {
+#submitvotebutton {
     width: 178px;
     padding-top: 28px;
     position: relative;
