@@ -2,24 +2,30 @@
 <html>
     <head>
         <title>Rageriffic</title>
-        <link rel="stylesheet" type="text/css" href="../public/css/rageriffic.css">
+        <link rel="stylesheet" type="text/css" href="../app/asset/stylesheets/rageriffic.css">
     </head>
     
     <body>
-        <div id="title">Rageriffic</div>
+        <div id = "contentcontainer">
+            <div id="title"><img src = "../public/img/welcome.png" alt = "header"></div>
 
-        <div id="maincontent">
-            <div class="imagediv">
-                <div class="imagetitle">Selected Rage Face</div>
-                <img id="rageface" src="" alt="rage face image"/>
+            <div id="camerainterface">
+                <div class="imagediv">
+                    <h1 class="h1words">waiting for others to join</h1>
+                    <h1 class="h1words">be vain for a little bit</h1>
+                    <div class = "usersize" id = "webcamcontainer">
+                        <img id="yourface" src="" alt="Web cam"/>
+                    </div>
+                </div>
+
+                <button id="startButton" class = "button"></button>
             </div>
-            <button id="start">START</button>
-        </div>
 
-        <div id="userbar">
-            <ul>
-                <lh>Participants</lh>
-            </ul>
+            <div id="userbar">
+                <ul>
+                    <li>Fluffyknives</li>
+                </ul>
+            </div>
         </div>
     </body>
 </html>

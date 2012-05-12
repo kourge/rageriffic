@@ -2,22 +2,22 @@
 <html>
     <head>
         <title>Rageriffic</title>
-         <%= stylesheet_link_tag "rageriffic.css" %>
+        <link rel="stylesheet" type="text/css" href="../app/asset/stylesheets/rageriffic.css">
     </head>
     
     <body>
         <div id = "contentcontainer">
-            <div id="title"><%= image_tag "ragerifficlogo.png" %></div>
+            <div id="title"><img src = "../public/img/ragerifficlogo.png" alt = "Rageriffic" /></div>
 
             <div id="camerainterface">
                 <div class = "usersize" id = "webcamcontainer"><img id="yourface" src="" alt="Web cam"/></div>
-                <!-- insert COUNTDOWN until picture taken -->
+                <!-- COUNTDOWN until picture taken -->
                 <button class = "button" id="takepicture"></button>
             </div>
             <div class="imagediv">
                 <!-- When picture taken, update this field and "picturestatus" field -->
                 <h1 class="imagetitle">selected rage face</h1>
-                    <div id = "ragefacecontainer"><img id="rageface" src="http://rlv.zcache.com/awesome_smiley_face_awesome_face_sticker-p217878147223685097envb3_400.jpg" alt="rage face image"/></div>
+                    <div id = "ragefacecontainer"><img id="rageface" src="" alt="rage face image"/></div>
             </div>
 
 

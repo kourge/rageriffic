@@ -2,54 +2,68 @@
 <html>
     <head>
         <title>Rageriffic</title>
-        <link rel="stylesheet" type="text/css" href="../public/css/rageriffic.css">
+        <link rel="stylesheet" type="text/css" href="../app/asset/stylesheets/rageriffic.css">
     </head>
     
     <body>
-        <div id="title">Rageriffic</div>
+        <div id = "contentcontainer">
+             <div id="title"><img src = "../public/img/ragerifficlogo.png" alt = "Rageriffic" /></div>
 
-        <h1>Cast Your Vote!</h1>
-        <div class="imagediv">
-            <div class="imagetitle">Original Image</div>
-            <img id="rageface" src="" alt="rage face image"/>
+            <h1 class = "h1words">Cast Your Vote!</h1>
+            <div class="imagediv">
+                <img id="rageface" src="" alt="rage face image"/>
+            </div>
+
+            <form id="voteform" action="" method="post">
+                <div id="rowone">
+                    <div class="imagediv">
+                        <div class ="voteImage userimagecontainer"><img id="userImage" src="" alt="Web cam"/></div><br />
+                        <input type="radio" name="vote" />
+                    </div>
+
+                    <div class="imagediv">
+                        <div class ="voteImage userimagecontainer"><img id="userImage" src="" alt="Web cam"/></div><br />
+                        <input type="radio" name="vote" />
+                    </div>
+
+                    <div class="imagediv">
+                        <div class ="voteImage userimagecontainer"><img id="userImage" src="" alt="Web cam"/></div><br />
+                        <input type="radio" name="vote" />
+                    </div>
+
+                    <div class="imagediv">
+                        <div class ="voteImage userimagecontainer"><img id="userImage" src="" alt="Web cam"/></div><br />
+                        <input type="radio" name="vote" />
+                    </div>
+                </div>
+
+                <div id="rowtwo">
+                    <div class="imagediv">
+                        <div class ="voteImage userimagecontainer"><img id="userImage" src="" alt="Web cam"/></div><br />
+                        <input type="radio" name="vote" />
+                    </div>
+
+                    <div class="imagediv">
+                        <div class ="voteImage userimagecontainer"><img id="userImage" src="" alt="Web cam"/></div><br />
+                        <input type="radio" name="vote" />
+                    </div>
+
+                    <div class="imagediv">
+                        <div class ="voteImage userimagecontainer"><img id="userImage" src="" alt="Web cam"/></div><br />
+                        <input type="radio" name="vote" />
+                    </div>
+
+                    <div class="imagediv">
+                        <div class ="voteImage userimagecontainer"><img id="userImage" src="" alt="Web cam"/></div><br />
+                        <input type="radio" name="vote" />
+                    </div>
+                </div>
+                <br/>
+                <input class = "button" id = "submitVoteButton" type="submit" value="" />
+            </form>
+            <br />
+            <!-- update after they've submitted-->
+            <h1 id="status"></h1>
         </div>
-
-        <form id="voteform" action="" method="post">
-            <div id="rowone">
-                <div class="imagediv">
-                    <img class="voteface" src="" alt="rage face image"/><br />
-                    <input type="radio" name="vote" />
-                </div>
-
-                <div class="imagediv">
-                    <img class="voteface" src="" alt="rage face image"/><br />
-                    <input type="radio" name="vote" />
-                </div>
-
-                <div class="imagediv">
-                    <img class="voteface" src="" alt="rage face image"/><br />
-                    <input type="radio" name="vote" />
-                </div>
-            </div>
-
-            <div id="rowtwo">
-                <div class="imagediv">
-                    <img class="voteface" src="" alt="rage face image"/><br />
-                    <input type="radio" name="vote" />
-                </div>
-
-                <div class="imagediv">
-                    <img class="voteface" src="" alt="rage face image"/><br />
-                    <input type="radio" name="vote" />
-                </div>
-
-                <div class="imagediv">
-                    <img class="voteface" src="" alt="rage face image"/><br />
-                    <input type="radio" name="vote" />
-                </div>
-            </div>
-        </form>
-        <br />
-        <div id="status">Waiting for everyone's votes...</div>
     </body>
 </html>

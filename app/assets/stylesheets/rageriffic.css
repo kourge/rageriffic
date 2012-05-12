@@ -1,45 +1,190 @@
-#title, form, div.imagediv, #maincontent, #camerainterface, #status, h1 {
-	text-align: center;
-	margin: 20px;
+@font-face{
+    font-family: Fago; src: url('../fonts/fago.otf');
+}
+
+@font-face{
+    font-family: Fago; font-weight: bold; src: url('../fonts/fago_bold.otf');
+}
+
+body {
+    background-image: url('../images/bgpattern.png');
+    font-family: Fago, Cambria;
+    padding: 0;
+    margin: 0;
+    height: 1000px;
+}
+
+#contentcontainer {
+    background-image: url('../images/contentbg.png');
+    background-repeat: no-repeat;
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+h1 {
+    font-weight: normal;
+    letter-spacing: -2px;
+    color: #202020;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#title {
+    padding-top: 50px;
+}
+
+#title img{
+    height: 135px;
+}
+
+.h1words {
+    text-align: center;
+}
+
+#title, form, #maincontent, #camerainterface, #status {
+    text-align: center;
+    margin: 20px;
+}
+
+div.imagediv {
+    text-align: center;
+    padding: 10px;
 }
 
 #status {
-	clear: both;
+    clear: both;
 }
 
 #inputuser {
-	border: 2px solid;
-	border-radius:25px;
-	padding-left: 5px;
-	padding-right: 5px;
+    width: 350px;
+    border: 2px solid;
+    border-radius:25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 35px;
+    text-align: center;
 }
 
 form {
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#rowone, #rowtwo {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #rowone div, #rowtwo div{
-	display: inline;
-	text-align: center;
-	float: left;
+    display: inline;
+    text-align: center;
+    float: left;
 }
 
 input {
-	margin: 5px;
+    margin: 5px;
 }
 
 #userbar {
-	text-align: left;
-	width: 10%;
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	border: 1px solid black;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-image: url('../images/participants.png');
+    width: 225px;
+    height: 392px;
+    background-repeat: no-repeat;
 }
 
 #userbar ul {
-	margin: 0px;
-	padding: 1em;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 50px;
+}
+
+#userbar li {
+    text-align: right;
+    size: 16pt;
+    color: white;
+    list-style: none;
+    padding-right: 21px;
+}
+
+.button{
+    margin-top: 50px !important;
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 0px;
+    padding-top: 47px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+}
+
+#takepicture {
+    width: 114px;
+    padding-top: 81px;
+    background-image: url('../images/camerabutton.png');
+}
+
+#startButton {
+    width: 109px;
+    padding-top: 45px;
+    background-image: url('../images/startgame.png');
+}
+
+#newGameButton {
+    width: 270px;
+    padding-top: 47px;
+    background-image: url('../images/newgame.png');
+}
+
+#joinButton {
+    width: 98px;
+    padding-top: 59px;
+    background-image: url('../images/join.png');
+}
+
+#submitVoteButton {
+    width: 178px;
+    padding-top: 28px;
+    position: relative;
+    top: 20px;
+    background-image: url('../images/vote.png');
+}
+
+#ragefacecontainer, #winnerfacecontainer {
+    height: 213px;
+    width: 293px;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#rageface {
+    width: 80%;
+    height: 80%;
+}
+
+#ragefacecontainer {
+    background-image: url('../images/ragefacebg.png');
+}
+
+#winnerfacecontainer {
+    background-image:url('../images/winner.png');
+}
+
+#webcamcontainer, .userimagecontainer {
+    background-image: url('../images/userpicbg.png');
+    height: 185px;
+    width: 254px;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
 }
