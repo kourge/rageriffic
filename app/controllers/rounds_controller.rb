@@ -30,9 +30,15 @@ class RoundsController < ApplicationController
     res["pics_taken"] = pics_taken
     res["frozen"] = frozen
 
-    res
+    return res
   end
 
   def start
+    cur_round = Round.find(params[:id])
+    cur_round.frozen = true;
+    cur_round.save
+
+    # empty page
+    return ""
   end
 end
