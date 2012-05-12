@@ -43,6 +43,8 @@ window.rid = params.id;
 $(document).ready(function() {
   var parts = $('#addfriends h1.h1words strong').html().split('/');
   id = parts[parts.length - 1];
+  parts = window.location.toString().split('/');
+  id = id || parts[parts.length - 1];
 });
 
 $(document).bind('imageUploaded', function(event, url) {
