@@ -5,12 +5,16 @@ class RoundsController < ApplicationController
   def play
     cur_round = (params[:id].nil? ? Round.new : Round.find(params[:id]))
     cur_round.save
-    p = Participation.new
-    p.name = params[:name]
-    p.round = cur_round
-    # LOL HARD CODING URLS
-    @url = File.join(request.base_url, "rounds", "#{cur_round.id}")
-    p.save
+    if cur_round.is_frozen
+      redirect_to :controller => 'game', :action => 'start_game'
+    else
+      p = Participation.new
+      p.name = params[:name]
+      p.round = cur_round
+      # LOL HARD CODING URLS
+      @url = File.join(request.base_url, "rounds", "#{cur_round.id}")
+      p.save
+    end
   end
 
   def state
@@ -59,7 +63,7 @@ class RoundsController < ApplicationController
     vs = cur_round.votes
 
     res = {}
-    res["voting_done"] = (ps.size == vs.size)
+    res["voting_done"] = (ps.size <= vs.size)
 
     render :json => res.to_json
   end

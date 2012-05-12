@@ -4,7 +4,7 @@ class Round < ActiveRecord::Base
   before_save :force_unfrozen
 
   def force_unfrozen
-    self.is_frozen = false
+    self.is_frozen ||= false
     true
   end
 
