@@ -41,7 +41,7 @@ class Rageriffic < Sinatra::Application
   end
 
   get '/vote' do
-    mustache :vote
+    mustache :voting
   end
 
   get '/db_test' do

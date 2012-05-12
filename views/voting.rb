@@ -1,4 +1,4 @@
 module Rageriffic::Views
-  class Vote < Layout
+  class Voting < Layout
   end
 end
