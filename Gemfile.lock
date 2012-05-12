@@ -39,7 +39,7 @@ DEPENDENCIES
   activerecord
   mustache
   mysql2
-  pg (= 0.10.0)
+  pg
   sequel (= 3.35.0)
   sinatra
   sinatra-activerecord
