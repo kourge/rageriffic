@@ -18,5 +18,9 @@ class Rageriffic < Sinatra::Application
     #"Hello, World!"
     mustache :startgame
   end
+
+  get '/db_test' do
+    Round[0].inspect
+  end
 end
 
