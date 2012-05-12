@@ -1,5 +1,5 @@
 
-CREATE TABLE IF NOT EXISTS `round` (
+CREATE TABLE IF NOT EXISTS `rounds` (
   `rid` int(11) NOT NULL AUTO_INCREMENT,
   `face` varchar(5) NOT NULL DEFAULT '',
   `ended` tinyint(1) NOT NULL DEFAULT '0',
@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `round` (
   PRIMARY KEY (`rid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-CREATE TABLE IF NOT EXISTS `participation` (
+CREATE TABLE IF NOT EXISTS `participations` (
   `uid` int(11) NOT NULL DEFAULT '0',
   `rid` int(11) NOT NULL DEFAULT '0',
   `owner` tinyint(1) NOT NULL DEFAULT '0',
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `participation` (
   KEY `rid` (`rid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-CREATE TABLE IF NOT EXISTS `vote` (
+CREATE TABLE IF NOT EXISTS `votes` (
   `rid` int(11) NOT NULL DEFAULT '0',
   `voter` int(11) NOT NULL DEFAULT '0',
   `votee` int(11) NOT NULL DEFAULT '0',
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `vote` (
   KEY `votee` (`votee`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-CREATE TABLE IF NOT EXISTS `preset` (
+CREATE TABLE IF NOT EXISTS `presets` (
   `face` varchar(5) NOT NULL DEFAULT '',
   `name` varchar(255) NOT NULL DEFAULT '',
 
