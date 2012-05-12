@@ -32,15 +32,15 @@ h1 {
     text-align: center;
 }
 
-#title {
+.title {
     padding-top: 50px;
 }
 
-#title img{
+.title img{
     height: 135px;
 }
 
-#title, form, #maincontent, #camerainterface, #status {
+.title, form, #maincontent, #camerainterface, #status {
     text-align: center;
     margin: 20px;
 }
@@ -164,7 +164,7 @@ input {
     text-align: center;
 }
 
-#rageface, #webcamcontainer object, #winnerfacecontainer {
+#rageface, #webcamcontainer object, #winnerfacecontainer, #userimage {
     height: 90%;
     width: 80%;
 }
@@ -178,11 +178,37 @@ input {
     background-image:url('winner.png');
 }
 
-#webcamcontainer, .userimagecontainer {
+.userimagecontainer {
     background-image: url('userpicbg.png');
     height: 185px;
     width: 254px;
     background-repeat: no-repeat;
     margin-left: auto;
     margin-right: auto;
+}
+
+#camerainterface{
+    background-image: url('webcam.png');
+    width: 400px;
+    height: 291px;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#addfriends{
+    position: fixed;
+    top: 10px;
+    background-color: white;
+    padding: 5px;
+    opacity: .9;
+}
+
+#suggestedFace, #ragefacecontainer {
+    position: relative;
+    top: 130px;
 }
