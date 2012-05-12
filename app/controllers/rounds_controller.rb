@@ -30,7 +30,7 @@ class RoundsController < ApplicationController
     cur_round.save
 
     # empty page
-    render ""
+    render :nothing => true
   end
 
   def pic
@@ -39,7 +39,7 @@ class RoundsController < ApplicationController
     p.face = params[:face]
     p.save
 
-    render ""
+    render :nothing => true
   end
 
   def vote
@@ -49,7 +49,7 @@ class RoundsController < ApplicationController
     v.votee = params[:p_id]
     v.save
 
-    render ""
+    render :nothing => true
   end
 
   def voting
