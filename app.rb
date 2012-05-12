@@ -32,6 +32,10 @@ class Rageriffic < Sinatra::Application
     mustache :"results"
   end
 
+  get '/present-picture' do
+    mustache :"present-picture"
+  end
+
   get '/db_test' do
     Round[0].inspect
   end
