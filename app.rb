@@ -7,8 +7,8 @@ class Rageriffic < Sinatra::Application
   enable :sessions
 
   set :mustache, {
-    :views     => 'views/',
-    :templates => 'templates/'
+    :views     => File.expand_path('views/'),
+    :templates => File.expand_path('templates/')
   }
 
   get '/' do
