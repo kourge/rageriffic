@@ -44,6 +44,10 @@ class Rageriffic < Sinatra::Application
     mustache :voting
   end
 
+  get '/waiting' do
+    mustache :waiting
+  end
+
   get '/db_test' do
     Round[0].inspect
   end
