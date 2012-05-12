@@ -1,9 +1,7 @@
-class Rageriffic
-  module Views
-    class Layout < Mustache
-      def title 
-        @title || "Rageriffic"
-      end
+module Rageriffic::Views
+  class Layout < Mustache
+    def title 
+      @title || "Rageriffic"
     end
   end
 end

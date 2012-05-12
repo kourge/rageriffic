@@ -1,2 +1,3 @@
-require './app'
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'app'
 run Rageriffic.new
