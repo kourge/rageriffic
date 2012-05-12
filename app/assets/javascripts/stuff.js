@@ -37,6 +37,9 @@ var params = (function(a) {
   return b;
 })(window.location.search.substr(1).split('&'));
 
+window.isOwner = !!params.owner;
+window.rid = params.id;
+
 $(document).bind('imageUploaded', function(event, url) {
   $.getJSON('/rounds/pic/' + id, {
     face: url.match(/\/(.{5})\..{3}$/)[1]
