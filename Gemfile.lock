@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     mustache (0.99.4)
+    mysql2 (0.3.11)
     pg (0.10.0)
     rack (1.4.1)
     rack-protection (1.2.0)
@@ -18,6 +19,7 @@ PLATFORMS
 
 DEPENDENCIES
   mustache
+  mysql2
   pg (= 0.10.0)
   sequel (= 3.35.0)
   sinatra
