@@ -21,14 +21,10 @@ class RoundsController < ApplicationController
     cur_round = Round.find(params[:id])
     ps = cur_round.participations
 
-    in_room = ps.count
-    pics_taken = ps.select {|p| not p.face.nil? }.size
-    frozen = cur_round.frozen
-
     res = {}
-    res["in_room"] = in_room
-    res["pics_taken"] = pics_taken
-    res["frozen"] = frozen
+    res["in_room"] = ps.count
+    res["pics_taken"] = ps.select {|p| not p.face.nil? }.size
+    res["frozen"] = cur_round.frozen
 
     return res
   end
@@ -59,5 +55,16 @@ class RoundsController < ApplicationController
     v.save
 
     return ""
+  end
+
+  def voting
+    cur_round = Round.find(params[:id])
+    ps = cur_round.participations
+    vs = cur_round.votes
+
+    res = {}
+    res["voting_done"] = (ps.size == vs.size)
+
+    return res
   end
 end

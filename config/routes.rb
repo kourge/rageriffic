@@ -8,6 +8,7 @@ Rageriffic::Application.routes.draw do
   match 'rounds/start/:id' => 'rounds#start'
   match 'rounds/pic/:id' => 'rounds#pic'
   match 'rounds/vote/:id' => 'rounds#vote'
+  match 'rounds/voting/:id' => 'rounds#voting'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
