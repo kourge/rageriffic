@@ -4,22 +4,22 @@
         <title>Rageriffic</title>
          <%= stylesheet_link_tag "rageriffic.css" %>
     </head>
+    
+    
     <body>
         <div id = "contentcontainer">
             <div id="title"><%= image_tag "welcome.png" %></div>
-
-            <div id="camerainterface">
-                <div class="imagediv">
-                    <h1>waiting for others to join</h1>
-                    <h1>be vain for a little bit</h1>
-                    <div class = "usersize" id = "webcamcontainer">
-                        <object id="webcam-object" width="320" height="240" data="../../../public/jscam_canvas_only.swf" type="application/x-shockwave-flash">
-                            <param value="../../../public/jscam_canvas_only.swf" name="movie">
-                            <param value="mode=callback&quality=85" name="FlashVars">
-                         </object>
-                    </div>
-                </div>
+            
+            <div class="imagediv">
+                <h1 class="imagetitle">selected rage face</h1>
+                <div id = "ragefacecontainer"><img id="rageface" src="http://i162.photobucket.com/albums/t264/JohnnySnacks/Comedy/awesome_face.jpg" alt="rage face image" /></div>
             </div>
+
+            <form id="nameform" action="" method="POST">
+                <input id="inputuser" type="text" placeholder="Insert Username" Username="name" /><br />
+                <input id = "joinButton" class = "button" type="submit" value="join" />
+            </form>
+
         </div>
     </body>
 </html>
