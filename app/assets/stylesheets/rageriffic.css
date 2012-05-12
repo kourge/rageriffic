@@ -45,9 +45,14 @@ h1 {
     margin: 20px;
 }
 
-div.imagediv {
+div.imagediv, .voteImage {
     text-align: center;
     padding: 10px;
+}
+
+.voteImage {
+    height: 145px;
+    width: 224px;
 }
 
 #status {
@@ -155,7 +160,7 @@ input {
     background-image: url('vote.png');
 }
 
-#ragefacecontainer, #winnerfacecontainer {
+#ragefacecontainer, #winnercontainer {
     height: 213px;
     width: 293px;
     background-repeat: no-repeat;
@@ -164,17 +169,19 @@ input {
     text-align: center;
 }
 
-#rageface, #webcamcontainer object, #winnerfacecontainer, #userimage {
+#rageface, #webcamcontainer object, #winnerfacecontainer, .userimage, #winner {
     height: 90%;
     width: 80%;
 }
+
+
 
 
 #ragefacecontainer {
     background-image: url('ragefacebg.png');
 }
 
-#winnerfacecontainer {
+#winnercontainer {
     background-image:url('winner.png');
 }
 
@@ -208,7 +215,7 @@ input {
     opacity: .9;
 }
 
-#suggestedFace, #ragefacecontainer {
+#suggestedFace, #ragefacecontainerX {
     position: relative;
     top: 130px;
 }

@@ -1,11 +1,14 @@
-var intervalID;
-
-var long_ass_string = "";
 
 
 $(document).ready(function() {
   printStartButton();
-  $("#startbutton").click(switchToCapture);
+  $(document).bind('roomFrozen', switchToCapture);
+  $(document).bind('startVoting', switchToVote);
+  $(document).bind('winnerAnnounced', switchToWinner);
+  //$(document).bind('participantUpdate', (e, data));
+  $("#startbutton").click(function() {
+    $(document).trigger('roomFrozen');
+  });
 });
 
 function printStartButton() {
@@ -27,8 +30,9 @@ function switchToCapture() {
   $(instr).insertAfter($("#logo"));
   $(cameraButton).insertAfter($("#status"));
   //var rageFaceJSON = jQuery.parseJSON(getRageFace);
+
   var header = $('<h1 id = "suggestedFace" class="imagetitle">selected rage face</h1>');
-  var rageFace = $('<div id = "ragefacecontainer"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
+  var rageFace = $('<div id = "ragefacecontainerX"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
   $("#contentcontainer").append(header);
   $("#contentcontainer").append(rageFace);
 }
@@ -36,34 +40,41 @@ function switchToCapture() {
 function takePicture() {
   $(".imagetitle").remove();
   $("h1").html("waiting for others to submit...");
-  //var status = $('<h1>waiting for others to submit...</h1>');
-  //$("#contentcontainer").append(status);
-  // Wait until the number of pictures taken == number of participants
-  waitForVoting();
 }
 
-function waitForVoting () {
-  intervalID = setInterval(getTotalVotes, 3000);
-}
-
-function getTotalVotes() {
+function switchToVote(e, data) {
   clearInterval(intervalID);
-  //switchToVote();
-}
-
-function switchToVote() {
   $("#contentcontainer :not(:first-child)").remove();
-  //$("#contentcontainer").empty();
   var rageFace = $('<div id = "ragefacecontainer"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
   var form = $('<form id="voteform" action="" method="post">');
   var div1 = $('<div id="rowone">');
   var div2 = $('<div id = "rowtwo">');
   $("#contentcontainer").append(form);
   $(form).append(div1);
-  $(form).append(div2);
-  var userImage = $('<div class="imagediv"><div class ="voteImage userimagecontainer"><img id="userimage" src="' + 
-                    'http://i.imgur.com/' + 'Xs70N' + '.jpg' + '" alt="Web cam"/></div><br /><input type="radio" name="vote" />');
-  $(div1).append(userImage);
-  //var div2
 
+  for (var i = 0; i < data.length; i++) {
+    var id = 'id' + data[i].id;
+    var img = data[i].face; 
+    var userImage = $('<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/' + 
+                   img + '.jpg' + '" alt="Web cam"/><br /><input type="radio" name="vote" value = "'+ id +'"/></div>');
+    $(div1).append(userImage);
+  }
+
+
+  var voteButton = $('<br clear = "all" /><input class = "button" id = "submitvotebutton" type="submit" value="" />').click(removeVoteButton);
+  $("#contentcontainer").append(voteButton);
+}
+
+function removeVoteButton() {
+  $('#submitvotebutton').remove();
+  $("#contentcontainer").append('<h1>thanks for voting, now we wait...');
+}
+
+
+function switchToWinner(e, data) {
+  clearInterval(intervalID);
+  $("#contentcontainer :not(:first-child)").remove();
+  var winner = $('<div class="imagediv winnercontainer"><img id = "winner" src = "http://i.imgur.com/' + data.face + '.jpg"  alt = "Rageriffic" />');
+  $("#contentcontainer").append("<h1>WINNER!</h1>");
+  $("#contentcontainer").append(winner);
 }
