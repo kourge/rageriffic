@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>Rageriffic</title>
-        <link rel="stylesheet" type="text/css" href="../app/asset/stylesheets/rageriffic.css">
+        <link rel="stylesheet" type="text/css" href="../../../app/assets/stylesheets/rageriffic.css">
+        <script src="../../../app/assets/javascripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+        <script src="../../../app/assets/javascripts/jquery.webcam.js" type="text/javascript"></script>
     </head>
     
     <body>
@@ -10,9 +12,12 @@
             <div id="title"><img src = "../public/img/ragerifficlogo.png" alt = "Rageriffic" /></div>
 
             <div id="camerainterface">
-                <div class = "usersize" id = "webcamcontainer"><img id="yourface" src="" alt="Web cam"/></div>
+                <object id="webcam-object" width="320" height="240" data="../../../public/jscam_canvas_only.swf" type="application/x-shockwave-flash">
+                    <param value="../../../public/jscam_canvas_only.swf" name="movie">
+                    <param value="mode=callback&quality=85" name="FlashVars">
+                </object>
                 <!-- COUNTDOWN until picture taken -->
-                <button class = "button" id="takepicture"></button>
+                <button onclick="webcam.onCapture(3);" class="button" id="takepicture"></button>
             </div>
             <div class="imagediv">
                 <!-- When picture taken, update this field and "picturestatus" field -->
