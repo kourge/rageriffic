@@ -13,7 +13,7 @@
 # gem 'pg'
 #
 development:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   database: rageriffic_development
   pool: 5
