@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'mustache/sinatra'
-require 'sequel'
+
+require 'database.rb'
 
 class Rageriffic < Sinatra::Application
   enable :sessions
