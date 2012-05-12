@@ -41,4 +41,13 @@ class RoundsController < ApplicationController
     # empty page
     return ""
   end
+
+  def pic
+    cur_round = Round.find(params[:id])
+    p = cur_round.participations.select {|p| p.id == params[:p_id] }[0]
+    p.face = params[:face]
+    p.save
+
+    return ""
+  end
 end
