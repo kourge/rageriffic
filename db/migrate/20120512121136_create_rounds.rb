@@ -3,7 +3,7 @@ class CreateRounds < ActiveRecord::Migration
     create_table :rounds do |t|
       t.string :face
       t.boolean :over
-      t.int :winner_id
+      t.integer :winner_id
 
       t.timestamps
     end
