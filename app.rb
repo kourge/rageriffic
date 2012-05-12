@@ -68,5 +68,5 @@ ActiveRecord::Base.establish_connection(
   :password => db.password,
   :database => db.path[1..-1],
   :encoding => 'utf8',
-  :min_messages => "warn"
+  :min_messages => "WARNING"
 )
