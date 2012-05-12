@@ -1,2 +1,2 @@
 require './app'
-run Rageriffic
+run Rageriffic.new
