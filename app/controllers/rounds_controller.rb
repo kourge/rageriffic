@@ -47,7 +47,7 @@ class RoundsController < ApplicationController
     cur_round = Round.find(params[:id])
     v = Vote.new
     v.round = cur_round
-    v.votee = params[:p_id]
+    v.votee = Participation.find(params[:p_id])
     v.save
 
     render :nothing => true
@@ -77,5 +77,15 @@ class RoundsController < ApplicationController
     end
 
     render :json => res.to_json
+  end
+
+  def winner
+    cur_round = Round.find(params[:id])
+    boss = cur_round.participations.inject do |p, n|
+      (p.votes.count > n.votes.count ? p : n)
+    end
+
+    render :json => boss.to_json
+
   end
 end
