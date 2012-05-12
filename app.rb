@@ -24,6 +24,10 @@ class Rageriffic < Sinatra::Application
     mustache :"host-start"
   end
 
+  get '/nonhost-start' do
+    mustache :"nonhost-start"
+  end
+
   get '/db_test' do
     Round[0].inspect
   end
