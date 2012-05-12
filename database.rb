@@ -1,7 +1,8 @@
 
 require 'sequel'
 
-DB = Sequel.connect(ENV['REMOTE_DATABASE_URL'])
+DB = Sequel.connect(ENV['SHARED_DATABASE_URL'])
+#DB = Sequel.sqlite unless defined?(DB)
 
 class Round < Sequel::Model
 end

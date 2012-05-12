@@ -1,7 +1,8 @@
 require 'sinatra/base'
 require 'mustache/sinatra'
+require 'sinatra/activerecord'
 
-require 'database.rb'
+#require 'database.rb'
 
 class Rageriffic < Sinatra::Application
   enable :sessions
@@ -13,7 +14,11 @@ class Rageriffic < Sinatra::Application
   }
 
   register Mustache::Sinatra
-  require 'views/layout'
+  require './views/layout'
+
+  def initialize
+
+  end
 
   get '/' do
     #"Hello, World!"
@@ -53,3 +58,14 @@ class Rageriffic < Sinatra::Application
   end
 end
 
+# Database connection
+db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+
+ActiveRecord::Base.establish_connection(
+  :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+  :host     => db.host,
+  :username => db.user,
+  :password => db.password,
+  :database => db.path[1..-1],
+  :encoding => 'utf8'
+)
