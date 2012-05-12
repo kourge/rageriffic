@@ -3,5 +3,11 @@ module Rageriffic::Views
     def title 
       @title || "Rageriffic"
     end
+
+    def css
+      @css || [
+        { "path": "" }
+      ]
+    end
   end
 end
