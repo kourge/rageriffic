@@ -1,4 +1,4 @@
-class App
+class Rageriffic
   module Views
     class StartGame < Layout
       def title

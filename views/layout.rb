@@ -1,4 +1,4 @@
-class App
+class Rageriffic
   module Views
     class Layout < Mustache
       def title 

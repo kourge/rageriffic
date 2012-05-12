@@ -3,6 +3,7 @@ require 'mustache/sinatra'
 require 'sequel'
 
 class Rageriffic < Sinatra::Application
+  require 'views/layout'
   enable :sessions
 
   set :mustache, {
