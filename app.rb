@@ -11,6 +11,7 @@ class Rageriffic < Sinatra::Application
     :templates => File.expand_path('templates/')
   }
 
+  register Mustache::Sinatra
   require 'views/layout'
 
   get '/' do
