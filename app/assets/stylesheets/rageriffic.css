@@ -167,10 +167,11 @@ input {
     margin-right: auto;
 }
 
-#rageface {
-    width: 80%;
-    height: 80%;
+#rageface, #webcamcontainer object, #winnerfacecontainer {
+    width: 90%;
+    height: 90%;
 }
+
 
 #ragefacecontainer {
     background-image: url('../images/ragefacebg.png');
