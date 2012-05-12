@@ -1,4 +1,7 @@
 class RoundsController < ApplicationController
+  def start_game
+  end
+
   def show
   end
 
