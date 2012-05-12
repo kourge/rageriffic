@@ -1,4 +1,4 @@
-#title, form, div.imagediv, #maincontent, #camerainterface, #status {
+#title, form, div.imagediv, #maincontent, #camerainterface, #status, h1 {
 	text-align: center;
 	margin: 20px;
 }
