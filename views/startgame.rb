@@ -1,7 +1,7 @@
 module Rageriffic::Views
   class StartGame < Layout
     def title
-      "Rageriffic"
+      "Rageriffic-tastic!"
     end
 
     def css
