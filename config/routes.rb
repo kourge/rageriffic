@@ -1,5 +1,6 @@
 Rageriffic::Application.routes.draw do
-  root  :to                         => 'game#start_game'
+  root  :to                         => 'rounds#start_game'
+  match 'rounds/start_game'         => 'rounds#start_game'
   match 'rounds/participations/:id' => 'rounds#participations'
   match 'rounds/state/:id'          => 'rounds#state'
   match 'rounds/start/:id'          => 'rounds#start'
@@ -8,7 +9,7 @@ Rageriffic::Application.routes.draw do
   match 'rounds/voting/:id'         => 'rounds#voting'
   match 'rounds/play/:id'           => 'rounds#play'
   match 'rounds/play'               => 'rounds#play'
-  match 'rounds/winner'             => 'rounds#winner'
+  match 'rounds/winner/:id'         => 'rounds#winner'
   match 'rounds/:id'                => 'rounds#show'
 
   # The priority is based upon order of creation:
