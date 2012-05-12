@@ -40,6 +40,10 @@ class Rageriffic < Sinatra::Application
     mustache :"take-picture"
   end
 
+  get '/vote' do
+    mustache :vote
+  end
+
   get '/db_test' do
     Round[0].inspect
   end
