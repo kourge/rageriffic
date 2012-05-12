@@ -13,7 +13,7 @@ $(document).ready(function() {
 });
 
 function printStartButton() {
-	if (/*getUserType() == owner*/true) {
+	if (window.isOwner == true) {
 		var startButton = $('<button id="startbutton" class="button"></button>');
     $("#contentcontainer").append(startButton);
 	} 

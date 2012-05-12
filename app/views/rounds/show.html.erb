@@ -4,6 +4,7 @@
         <title>Rageriffic</title>
         <%= stylesheet_link_tag "rageriffic.css" %>
         <%=javascript_include_tag "jquery-1.7.2.min.js" %>
+        <%=javascript_include_tag "stuff.js" %>
         <%=javascript_include_tag "dynamic_content.js" %>
     </head>
     
@@ -17,7 +18,7 @@
                 <div id = "ragefacecontainer" class = "joinrageface" ><img id="rageface" src="http://i162.photobucket.com/albums/t264/JohnnySnacks/Comedy/awesome_face.jpg" alt="rage face image" /></div>
             </div>
 
-            <form id="nameform" action="" method="POST">
+            <form id="nameform" action="rounds/play" method="get">
                 <input id="inputuser" type="text" placeholder="Insert Username" Username="name" /><br />
                 <input id = "joinbutton" class = "button" type="submit" value="join" />
             </form>
