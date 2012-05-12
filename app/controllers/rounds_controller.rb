@@ -47,7 +47,7 @@ class RoundsController < ApplicationController
     cur_round = Round.find(params[:id])
     v = Vote.new
     v.round = cur_round
-    v.votee = Participation.find(params[:p_id])
+    v.participation = Participation.find(params[:p_id])
     v.save
 
     render :nothing => true
