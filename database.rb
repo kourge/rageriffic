@@ -1,7 +1,7 @@
 
 require 'sequel'
 
-DB = Sequel.connect(SETTINGS['db'])
+DB = Sequel.connect(ENV['REMOTE_DATABASE_URL'])
 
 class Round < Sequel::Model
 end
