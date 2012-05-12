@@ -8,7 +8,8 @@ class RoundsController < ApplicationController
     p = Participation.new
     p.name = params[:name]
     p.round = cur_round
-    @url = File.join(request.url, "#{cur_round.id}")
+    # LOL HARD CODING URLS
+    @url = File.join(request.base_url, "rounds", "#{cur_round.id}")
     p.save
   end
 
