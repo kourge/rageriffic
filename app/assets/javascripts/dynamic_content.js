@@ -44,7 +44,6 @@ function takePicture() {
 }
 
 function switchToVote(e, data) {
-  clearInterval(intervalID);
   $("#contentcontainer :not(:first-child)").remove();
   var rageFace = $('<div id = "ragefacecontainerX"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
   var form = $('<form id="voteform" action="" method="post">');
@@ -73,7 +72,6 @@ function removeVoteButton() {
 
 
 function switchToWinner(e, data) {
-  clearInterval(intervalID);
   $("#contentcontainer :not(:first-child)").remove();
   var winner = $('<div class="imagediv winnercontainer"><img id = "winner" src = "http://i.imgur.com/' + data.face + '.jpg"  alt = "Rageriffic" />');
   $("#contentcontainer").append("<h1>WINNER!</h1>");
