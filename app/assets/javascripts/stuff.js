@@ -35,18 +35,10 @@ var params = (function(a) {
   return b;
 })(window.location.search.substr(1).split('&'));
 
-$(document).bind('roomFrozen', function() {
-  console.log('roomFrozen');
-});
-
-$(document).bind('startVoting', function() {
-  console.log('startVoting');
-  stopPolling();
-});
-
 $(document).bind('imageUploaded', function(event, url) {
-  var iid = url.match(/\/(.{5})\..{3}$/)[1];
-  console.log(iid);
+  $.getJSON('/rounds/pic/' + id, {
+    face: url.match(/\/(.{5})\..{3}$/)[1]
+  });
 });
 
 if (ENABLE_POLLING) timer = window.setInterval(function poll() {
