@@ -8,6 +8,8 @@ class RoundsController < ApplicationController
     p = Participation.new
     p.name = params[:name]
     p.round = cur_round
+    # LOL HARD CODING URLS
+    @url = File.join(request.base_url, "rounds", "#{cur_round.id}")
     p.save
   end
 
@@ -18,27 +20,27 @@ class RoundsController < ApplicationController
     res = {}
     res["in_room"] = ps.count
     res["pics_taken"] = ps.select {|p| not p.face.nil? }.size
-    res["frozen"] = cur_round.frozen
+    res["is_frozen"] = cur_round.is_frozen
 
     render :json => res.to_json
   end
 
   def start
     cur_round = Round.find(params[:id])
-    cur_round.frozen = true;
+    cur_round.is_frozen = true;
     cur_round.save
 
     # empty page
-    return ""
+    render :nothing => true
   end
 
   def pic
     cur_round = Round.find(params[:id])
-    p = cur_round.participations.select {|p| p.id == params[:p_id] }.first
+    p = Participation.find(params[:p_id])
     p.face = params[:face]
     p.save
 
-    return ""
+    render :nothing => true
   end
 
   def vote
@@ -48,7 +50,7 @@ class RoundsController < ApplicationController
     v.votee = params[:p_id]
     v.save
 
-    return ""
+    render :nothing => true
   end
 
   def voting
@@ -58,6 +60,21 @@ class RoundsController < ApplicationController
 
     res = {}
     res["voting_done"] = (ps.size == vs.size)
+
+    render :json => res.to_json
+  end
+
+  def participations
+    res = []
+    cur_round = Round.find(params[:id])
+
+    cur_round.participations.each do |p|
+      cur = {}
+      cur["name"] = p.name
+      cur["face"] = p.face
+      cur["id"] = p.id
+      res << cur
+    end
 
     render :json => res.to_json
   end
