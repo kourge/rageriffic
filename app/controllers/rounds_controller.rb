@@ -6,5 +6,10 @@ class RoundsController < ApplicationController
   end
 
   def show
+    round_id = params[:id]
+    p = Participation.new
+    cur_round = Round.find(round_id)
+    p.round = cur_round
+    p.save
   end
 end
