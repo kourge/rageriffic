@@ -4,3 +4,5 @@ config.yaml
 *.DS_Store
 tmp
 log/*.log
+rageriffic_development
+log/development.log
