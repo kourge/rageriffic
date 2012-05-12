@@ -1,10 +1,4 @@
 class RoundsController < ApplicationController
-  def new
-    r = Round.new
-    r.save
-    render :json => r.to_json
-  end
-
   def show
   end
 
@@ -26,7 +20,7 @@ class RoundsController < ApplicationController
     res["pics_taken"] = ps.select {|p| not p.face.nil? }.size
     res["frozen"] = cur_round.frozen
 
-    return res
+    render :json => res.to_json
   end
 
   def start
@@ -40,7 +34,7 @@ class RoundsController < ApplicationController
 
   def pic
     cur_round = Round.find(params[:id])
-    p = cur_round.participations.select {|p| p.id == params[:p_id] }[0]
+    p = cur_round.participations.select {|p| p.id == params[:p_id] }.first
     p.face = params[:face]
     p.save
 
@@ -65,6 +59,6 @@ class RoundsController < ApplicationController
     res = {}
     res["voting_done"] = (ps.size == vs.size)
 
-    return res
+    render :json => res.to_json
   end
 end
