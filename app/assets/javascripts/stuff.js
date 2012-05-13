@@ -10,12 +10,19 @@ function joinGame() {
     window.p_id = data.id
   });
   console.log("joined game");
+  getRound();
 }
 
 function startGame() {
   console.log("initiating game");
   $.getJSON('/rounds/start/' + id, {
     id: id
+  });
+}
+
+function getRound() {
+  $.getJSON('/rounds/round/' + id, function(data) {
+    window.round = data;
   });
 }
 

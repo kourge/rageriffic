@@ -34,7 +34,10 @@ function switchToCapture() {
   //var rageFaceJSON = jQuery.parseJSON(getRageFace);
 
   var header = $('<h1 id = "suggestedFace" class="imagetitle">selected rage face</h1>');
-  var rageFace = $('<div id = "ragefacecontainerX"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
+  var rageFace = $('<div id = "ragefacecontainerX"></div>');
+  var rageImage = $('<img id="rageface" alt="rage face image"/>');
+  rageImage.attr('src', window.round.face);
+  rageFace.append(rageImage);
   $("#contentcontainer").append(header);
   $("#contentcontainer").append(rageFace);
 }
@@ -48,7 +51,10 @@ function switchToVote(e, data) {
   $("#contentcontainer :not(:first-child)").remove();
   console.log(data)
   participations = data.participations
-  var rageFace = $('<div id = "ragefacecontainerX"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
+  var rageFace = $('<div id = "ragefacecontainerX">');
+  var rageImage = $('<img id="rageface" alt="rage face image"/>');
+  rageImage.attr('src', window.round.face);
+  rageFace.append(rageImage);
   var form = $('<form id="voteform" action="" method="post">');
   var div1 = $('<div id="rowone">');
   var div2 = $('<div id = "rowtwo">');
