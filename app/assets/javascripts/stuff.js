@@ -38,7 +38,7 @@ function beginVoting() {
         });
       }
     });
-    i++;
+    // i++;
   }, INTERVAL);
 }
 

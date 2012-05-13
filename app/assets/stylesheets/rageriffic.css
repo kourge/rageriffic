@@ -173,10 +173,17 @@ input {
 
 #rageface, #webcamcontainer object, #winnerfacecontainer, .userimage, #winner {
     height: 72%;
-    width: 64%;
+    width:  64%;
 }
 
+#webcam-object, #rageface{
+    padding-top: 25px;
+}
 
+.userimage {
+  padding-top:  15px;
+  margin-left: -15px;
+}
 
 
 #ragefacecontainer, #ragefacecontainerX {

@@ -88,7 +88,7 @@ function switchToWinner(e, data) {
   console.log(winnerImageUrl);
   window.winnerImage = winnerImage
   winnerImage.attr('src', 'http://i.imgur.com/' + winnerImageUrl + ".png");
-  $("#contentcontainer").append("<h1>WINNER!</h1>");
+  $("#contentcontainer").append("<h1>WINNER!!!</h1>");
   $("#contentcontainer").append(winnerWrapper);
 }
 
