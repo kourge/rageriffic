@@ -6,10 +6,12 @@ var previousFreeze = false, isFrozen = false;
 
 function joinGame() {
   console.log("joining game");
-  $.getJSON('/rounds/join/' + id, function(data) {
+  $.getJSON('/rounds/join/' + id,
+    {name: window.name}
+  , function(data) {
     window.p_id = data.id
+    console.log("joined game");
   });
-  console.log("joined game");
   getRound();
 }
 
@@ -28,7 +30,6 @@ function getRound() {
 
 function loadParticipants() {
   $.getJSON('/rounds/participations/' + id, function(data) {
-    console.log(data)
     $(document).trigger('startVoting', {participations: data});
     beginVoting();
   });
@@ -51,7 +52,6 @@ function beginVoting() {
 
 // get passed an object {p_id: ___}
 function vote(p_id) {
-  console.log(p_id)
   $.getJSON('/rounds/vote/' + id, p_id);
 }
 
@@ -67,6 +67,7 @@ var params = (function(a) {
 })(window.location.search.substr(1).split('&'));
 
 window.isOwner = !!params.owner;
+window.name = params.name
 window.rid = params.id;
 
 $(document).ready(function() {

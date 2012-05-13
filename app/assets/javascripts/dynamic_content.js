@@ -22,8 +22,6 @@ function printStartButton() {
 }
 
 function updateJoinCount(event, data) {
-  console.log("join count");
-  console.log(data);
   $('#joincount').text(data);
 }
 
@@ -56,7 +54,6 @@ function takePicture() {
 
 function switchToVote(e, data) {
   $("#contentcontainer :not(:first-child)").remove();
-  console.log(data)
   participations = data.participations
   var rageFace = $('<div id = "ragefacecontainerX">');
   var rageImage = $('<img id="rageface" alt="rage face image"/>');
@@ -77,9 +74,7 @@ function switchToVote(e, data) {
     userWrap.append(userImage);
     $(div1).append(userWrap);
     $(userWrap).click(function(event) {
-      console.log('triggering vote');
       var p_id = $(event.currentTarget).attr('p_id')
-      console.log(event)
       $(document).trigger('sendVote', {p_id: p_id});
       removeVoteButton();
     });
@@ -100,10 +95,9 @@ function switchToWinner(e, data) {
   var winnerWrapper = $('<div class="imagediv winnercontainer">');
   var winnerImage = $('<img id="winner" alt="Rageriffic" />');
   winnerWrapper.append(winnerImage);
-  console.log(winnerImageUrl);
   window.winnerImage = winnerImage
   winnerImage.attr('src', 'http://i.imgur.com/' + winnerImageUrl + ".png");
-  $("#contentcontainer").append("<h1>WINNER!!!</h1>");
+  $("#contentcontainer").append("<h1>"+ data.name.toUpperCase() + " IS THE WINNER!!!</h1>");
   $("#contentcontainer").append(winnerWrapper);
 }
 
