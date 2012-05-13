@@ -51,14 +51,13 @@ function switchToVote(e, data) {
   var div2 = $('<div id = "rowtwo">');
   $("#contentcontainer").append(form);
   $(form).append(div1);
-
-  for (var i = 0; i < data.length; i++) {
-    var id = 'id' + data[i].id;
-    var img = data[i].face; 
-    var userImage = $('<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/' + 
-                   img + '.jpg' + '" alt="Web cam"/><br /><input type="radio" name="vote" value = "'+ id +'"/></div>');
+    var userImage = $('<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/SpJBF.png" alt="Web cam"/><br /></div>' + 
+                      '<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/zkTBH.png" alt="Web cam"/><br /></div>' +
+                      '<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/DXutC.png" alt="Web cam"/><br /></div>' +
+                      '<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/OdS95.png" alt="Web cam"/><br /></div>' +
+                      '<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/DvoSe.png" alt="Web cam"/><br /></div>' +
+                      '<div class ="voteImage userimagecontainer"><img class="userimage" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="Web cam"/><br /></div>');
     $(div1).append(userImage);
-  }
 
 
   var voteButton = $('<br clear = "all" /><input class = "button" id = "submitvotebutton" type="submit" value="" />').click(removeVoteButton);
@@ -73,7 +72,7 @@ function removeVoteButton() {
 
 function switchToWinner(e, data) {
   $("#contentcontainer :not(:first-child)").remove();
-  var winner = $('<div class="imagediv winnercontainer"><img id = "winner" src = "http://i.imgur.com/' + data.face + '.jpg"  alt = "Rageriffic" />');
+  var winner = $('<div class="imagediv winnercontainer"><img id = "winner" src = "http://alltheragefaces.com/img/faces/large/happy-oh-stop-it-you-l.png"  alt = "Rageriffic" />');
   $("#contentcontainer").append("<h1>WINNER!</h1>");
   $("#contentcontainer").append(winner);
 }
