@@ -1,6 +1,6 @@
 
 (function($) {
-var INTERVAL = 3000, GIVEUP = 5, ENABLE_POLLING = true;
+var INTERVAL = 3000, GIVEUP = 8, ENABLE_POLLING = true;
 var id, timer, i = 0;
 var previousFreeze = false, isFrozen = false;
 
@@ -65,12 +65,12 @@ if (ENABLE_POLLING) timer = window.setInterval(function poll() {
     if (!previousFreeze && isFrozen) {
       $(document).trigger('roomFrozen');
     }
+      i++;
     if (data.in_room == data.pic_taken || i == GIVEUP) {
       window.clearInterval(timer);
       loadParticipants();
     }
     previousFreeze = isFrozen;
-    i++;
   });
 }, INTERVAL);
 
