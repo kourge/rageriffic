@@ -51,6 +51,7 @@ function beginVoting() {
 
 // get passed an object {p_id: ___}
 function vote(p_id) {
+  console.log(p_id)
   $.getJSON('/rounds/vote/' + id, p_id);
 }
 
@@ -98,6 +99,7 @@ $(document).bind('sendVote', function(e, p_id) {
 
 if (ENABLE_POLLING) timer = window.setInterval(function poll() {
   $.getJSON('/rounds/state/' + id, function(data) {
+    $(document).trigger('updateJoinCount', data.in_room);
     if (data.is_frozen) {
       isFrozen = true;
     }

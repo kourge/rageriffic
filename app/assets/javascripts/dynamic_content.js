@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
   printStartButton();
+  $(document).bind('updateJoinCount', updateJoinCount);
   $(document).bind('roomFrozen', switchToCapture);
   $(document).bind('startVoting', switchToVote);
   $(document).bind('winnerAnnounced', switchToWinner);
@@ -18,6 +19,12 @@ function printStartButton() {
 		var startButton = $('<button id="startbutton" class="button"></button>');
     $("#contentcontainer").append(startButton);
 	} 
+}
+
+function updateJoinCount(event, data) {
+  console.log("join count");
+  console.log(data);
+  $('#joincount').text(data);
 }
 
 function switchToCapture() {
@@ -69,9 +76,11 @@ function switchToVote(e, data) {
     userWrap.attr('p_id', participations[i].id);
     userWrap.append(userImage);
     $(div1).append(userWrap);
-    $(userWrap).click(function() {
+    $(userWrap).click(function(event) {
       console.log('triggering vote');
-      $(document).trigger('sendVote', {p_id: parseInt(userWrap.attr('p_id'))});
+      var p_id = $(event.currentTarget).attr('p_id')
+      console.log(event)
+      $(document).trigger('sendVote', {p_id: p_id});
       removeVoteButton();
     });
   }
