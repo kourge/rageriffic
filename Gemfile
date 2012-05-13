@@ -22,6 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'sqlite3'
+gem 'randumb'
 
 gem 'therubyracer'
 

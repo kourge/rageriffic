@@ -9,7 +9,7 @@ class Round < ActiveRecord::Base
   end
 
   def get_face
-    self.face ||= Preset.find(rand(Preset.count) + 1).face
+    self.face ||= Preset.random.face
   end
 
 end
