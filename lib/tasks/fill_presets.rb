@@ -1,4 +1,4 @@
-f = File.new(File.join(File.dirname(__FILE__), "presets.txt"))
+f = `ls public/rage`.split("\n")
 puts f.inspect
 f.each do |l|
   puts l

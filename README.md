@@ -31,10 +31,9 @@ Want to deploy it yourself?
 
 run
 
-`rake db:reset && rake db:migrate`
-`rails runner lib/tasks/fill_presets.rb`
+`rake setup`
 
-and then
+and
 
 `rails server`
 

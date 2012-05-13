@@ -31,10 +31,12 @@ function switchToCapture() {
   $("#logo").removeClass("hidden");
   $("#camerainterface").removeClass('hidden');
   var cameraButton = $('<button onclick = "webcam.capture(3); void(0);" class="button" id="camerabutton"></button>').click(takePicture);
-  // $("#startbutton").remove();
   $("#contentcontainer h1").remove()
   var instr = $('<h1>try to imitate the rage face</h1>');
+  var tip = $('<h1>When you hit the button, you have 3 seconds to pose<h1>');
+  $(tip).insertAfter($("#logo"));
   $(instr).insertAfter($("#logo"));
+
   $(cameraButton).insertAfter($("#status"));
   //var rageFaceJSON = jQuery.parseJSON(getRageFace);
 
@@ -96,6 +98,7 @@ function switchToWinner(e, data) {
   var winnerImage = $('<img id="winner" alt="Rageriffic" />');
   winnerWrapper.append(winnerImage);
   window.winnerImage = winnerImage
+  console.log(data)
   winnerImage.attr('src', 'http://i.imgur.com/' + winnerImageUrl + ".png");
   $("#contentcontainer").append("<h1>"+ data.name.toUpperCase() + " IS THE WINNER!!!</h1>");
   $("#contentcontainer").append(winnerWrapper);
