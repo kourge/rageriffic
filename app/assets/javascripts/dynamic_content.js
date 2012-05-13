@@ -1,7 +1,6 @@
 
 
 $(document).ready(function() {
-  $("joinbutton").click(switchToCapture);
   printStartButton();
   $(document).bind('roomFrozen', switchToCapture);
   $(document).bind('startVoting', switchToVote);
@@ -11,6 +10,7 @@ $(document).ready(function() {
     $(document).trigger('startClicked');
     $(document).trigger('roomFrozen');
   });
+  addRoundIdToJoinLink();
 });
 
 function printStartButton() {
@@ -18,6 +18,12 @@ function printStartButton() {
 		var startButton = $('<button id="startbutton" class="button"></button>');
     $("#contentcontainer").append(startButton);
 	} 
+}
+
+function addRoundIdToJoinLink() {
+  $("#nameform").attr('action', function(i, h) {
+     return h + "/" + window.rid;
+   });
 }
 
 function switchToCapture() {
@@ -77,3 +83,4 @@ function switchToWinner(e, data) {
   $("#contentcontainer").append("<h1>WINNER!</h1>");
   $("#contentcontainer").append(winner);
 }
+
