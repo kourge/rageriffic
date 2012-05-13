@@ -10,7 +10,7 @@ $(document).ready(function() {
     $(document).trigger('startClicked');
     $(document).trigger('roomFrozen');
   });
-  addRoundIdToJoinLink();
+  $(document).trigger('joinGame');
 });
 
 function printStartButton() {
@@ -18,12 +18,6 @@ function printStartButton() {
 		var startButton = $('<button id="startbutton" class="button"></button>');
     $("#contentcontainer").append(startButton);
 	} 
-}
-
-function addRoundIdToJoinLink() {
-  $("#nameform").attr('action', function(i, h) {
-     return h + "/" + window.rid;
-   });
 }
 
 function switchToCapture() {

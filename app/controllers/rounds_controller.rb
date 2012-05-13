@@ -17,7 +17,6 @@ class RoundsController < ApplicationController
   end
 
   def join
-    Rails.logger.debug("\033[32m JOIN \033[0m")
     cur_round = Round.find(params[:id])
     p = Participation.new
     p.name  = params[:name]

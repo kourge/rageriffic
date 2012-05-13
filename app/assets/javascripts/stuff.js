@@ -64,10 +64,10 @@ $(document).ready(function() {
     parts = window.location.toString().split('/');
     id = id || parts[parts.length - 1];
   }
-  joinGame();
   window.rid = id
 });
 
+$(document).bind('joinGame', joinGame);
 $(document).bind('imageUploaded', function(event, url) {
   $.getJSON('/rounds/pic/' + id, {
     face: url.match(/\/(.{5})\..{3}$/)[1],
@@ -88,9 +88,9 @@ if (ENABLE_POLLING) timer = window.setInterval(function poll() {
       $(document).trigger('roomFrozen');
     }
     if(previousFreeze && isFrozen) {
-      i++;
+      // i++;
     }
-    if (data.in_room == data.pic_taken || i == GIVEUP) {
+    if (data.in_room == data.pics_taken || i == GIVEUP) {
       window.clearInterval(timer);
       loadParticipants();
     }
