@@ -19,3 +19,26 @@ Developed by Undergraduates the the University of Washington for the May
 * Wilson Lee
 * Michael Zhou
 * David Mah
+
+# Deploy
+
+Want to deploy it yourself?
+
+* >= Ruby 1.9.2
+* >= Rails 3
+* Postgresql
+* a slew of gems that are in the gem file
+
+run
+
+`rake db:reset && rake db:migrate`
+`rails runner lib/tasks/fill_presets.rb`
+
+and then
+
+`rails server`
+
+and you're good to hit it on localhost:3000
+
+You can figure out how to change the config if you want
+to have it any other way :).
