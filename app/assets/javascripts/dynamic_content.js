@@ -46,20 +46,21 @@ function takePicture() {
 
 function switchToVote(e, data) {
   $("#contentcontainer :not(:first-child)").remove();
+  console.log(data)
+  images = data.participations
   var rageFace = $('<div id = "ragefacecontainerX"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
   var form = $('<form id="voteform" action="" method="post">');
   var div1 = $('<div id="rowone">');
   var div2 = $('<div id = "rowtwo">');
   $("#contentcontainer").append(form);
   $(form).append(div1);
-    var userImage = $('<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/SpJBF.png" alt="Web cam"/><br /></div>' + 
-                      '<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/zkTBH.png" alt="Web cam"/><br /></div>' +
-                      '<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/DXutC.png" alt="Web cam"/><br /></div>' +
-                      '<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/OdS95.png" alt="Web cam"/><br /></div>' +
-                      '<div class ="voteImage userimagecontainer"><img class="userimage" src="http://i.imgur.com/DvoSe.png" alt="Web cam"/><br /></div>' +
-                      '<div class ="voteImage userimagecontainer"><img class="userimage" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="Web cam"/><br /></div>');
-    $(div1).append(userImage);
-
+  for(var i = 0; i < images.length; i++) {
+    var userWrap  = $('<div class ="voteImage userimagecontainer"></div>');
+    var userImage = $('<img class="userimage" alt=Web cam"/><br />');
+    userImage.attr('src', 'http://i.imgur.com/' + images[i].face + '.png');
+    userWrap.append(userImage);
+    $(div1).append(userWrap);
+  }
 
   var voteButton = $('<br clear = "all" /><input class = "button" id = "submitvotebutton" type="submit" value="" />').click(removeVoteButton);
   $("#contentcontainer").append(voteButton);

@@ -21,7 +21,8 @@ function startGame() {
 
 function loadParticipants() {
   $.getJSON('/rounds/participations/' + id, function(data) {
-    $(document).trigger('startVoting', data);
+    console.log(data)
+    $(document).trigger('startVoting', {participations: data});
     beginVoting();
   });
 }
@@ -37,7 +38,7 @@ function beginVoting() {
         });
       }
     });
-    i++;
+    // i++;
   }, INTERVAL);
 }
 
@@ -88,7 +89,7 @@ if (ENABLE_POLLING) timer = window.setInterval(function poll() {
       $(document).trigger('roomFrozen');
     }
     if(previousFreeze && isFrozen) {
-      // i++;
+      i++;
     }
     if (data.in_room == data.pics_taken || i == GIVEUP) {
       window.clearInterval(timer);
