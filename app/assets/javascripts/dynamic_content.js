@@ -8,7 +8,7 @@ $(document).ready(function() {
   //$(document).bind('participantUpdate', (e, data));
   $("#startbutton").click(function() {
     $(document).trigger('startClicked');
-    $(document).trigger('roomFrozen');
+    $('#startbutton').remove();
   });
   $(document).trigger('joinGame');
 });
@@ -26,7 +26,7 @@ function switchToCapture() {
   $("#logo").removeClass("hidden");
   $("#camerainterface").removeClass('hidden');
   var cameraButton = $('<button onclick = "webcam.capture(3); void(0);" class="button" id="camerabutton"></button>').click(takePicture);
-  $("#startbutton").remove();
+  // $("#startbutton").remove();
   $("#contentcontainer h1").remove()
   var instr = $('<h1>try to imitate the rage face</h1>');
   $(instr).insertAfter($("#logo"));
