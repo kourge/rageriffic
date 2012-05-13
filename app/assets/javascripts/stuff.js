@@ -12,6 +12,13 @@ function joinGame() {
   console.log("joined game");
 }
 
+function startGame() {
+  console.log("initiating game");
+  $.getJSON('/rounds/start/' + id, {
+    id: id
+  });
+}
+
 function loadParticipants() {
   $.getJSON('/rounds/participations/' + id, function(data) {
     $(document).trigger('startVoting', data);
@@ -66,6 +73,10 @@ $(document).bind('imageUploaded', function(event, url) {
     face: url.match(/\/(.{5})\..{3}$/)[1],
     p_id: window.p_id
   });
+});
+
+$(document).bind('startClicked', function() {
+  startGame();
 });
 
 if (ENABLE_POLLING) timer = window.setInterval(function poll() {

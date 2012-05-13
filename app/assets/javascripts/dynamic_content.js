@@ -8,6 +8,7 @@ $(document).ready(function() {
   $(document).bind('winnerAnnounced', switchToWinner);
   //$(document).bind('participantUpdate', (e, data));
   $("#startbutton").click(function() {
+    $(document).trigger('startClicked');
     $(document).trigger('roomFrozen');
   });
 });
