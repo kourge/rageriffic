@@ -49,6 +49,7 @@ $(document).ready(function() {
     parts = window.location.toString().split('/');
     id = id || parts[parts.length - 1];
   }
+  window.rid = id
 });
 
 $(document).bind('imageUploaded', function(event, url) {
@@ -65,7 +66,9 @@ if (ENABLE_POLLING) timer = window.setInterval(function poll() {
     if (!previousFreeze && isFrozen) {
       $(document).trigger('roomFrozen');
     }
+    if(previousFreeze && isFrozen) {
       i++;
+    }
     if (data.in_room == data.pic_taken || i == GIVEUP) {
       window.clearInterval(timer);
       loadParticipants();
