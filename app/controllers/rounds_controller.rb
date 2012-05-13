@@ -11,13 +11,19 @@ class RoundsController < ApplicationController
     if cur_round.is_frozen
       redirect_to :controller => 'game', :action => 'start_game'
     else
-      p = Participation.new
-      p.name = params[:name]
-      p.round = cur_round
       # LOL HARD CODING URLS
       @url = File.join(request.base_url, "rounds", "#{cur_round.id}")
-      p.save
     end
+  end
+
+  def join
+    Rails.logger.debug("\033[32m JOIN \033[0m")
+    cur_round = Round.find(params[:id])
+    p = Participation.new
+    p.name  = params[:name]
+    p.round = cur_round
+    p.save
+    render :json => p.to_json
   end
 
   def state

@@ -4,6 +4,14 @@ var INTERVAL = 3000, GIVEUP = 8, ENABLE_POLLING = true;
 var id, timer, i = 0;
 var previousFreeze = false, isFrozen = false;
 
+function joinGame() {
+  console.log("joining game");
+  $.getJSON('/rounds/join/' + id, function(data) {
+    window.p_id = data.id
+  });
+  console.log("joined game");
+}
+
 function loadParticipants() {
   $.getJSON('/rounds/participations/' + id, function(data) {
     $(document).trigger('startVoting', data);
@@ -49,12 +57,14 @@ $(document).ready(function() {
     parts = window.location.toString().split('/');
     id = id || parts[parts.length - 1];
   }
+  joinGame();
   window.rid = id
 });
 
 $(document).bind('imageUploaded', function(event, url) {
   $.getJSON('/rounds/pic/' + id, {
-    face: url.match(/\/(.{5})\..{3}$/)[1]
+    face: url.match(/\/(.{5})\..{3}$/)[1],
+    p_id: window.p_id
   });
 });
 
