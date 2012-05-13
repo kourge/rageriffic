@@ -47,23 +47,29 @@ function takePicture() {
 function switchToVote(e, data) {
   $("#contentcontainer :not(:first-child)").remove();
   console.log(data)
-  images = data.participations
+  participations = data.participations
   var rageFace = $('<div id = "ragefacecontainerX"><img id="rageface" src="http://cache.ohinternet.com/images/1/13/Awesome.png" alt="rage face image"/>');
   var form = $('<form id="voteform" action="" method="post">');
   var div1 = $('<div id="rowone">');
   var div2 = $('<div id = "rowtwo">');
   $("#contentcontainer").append(form);
   $(form).append(div1);
-  for(var i = 0; i < images.length; i++) {
+  var voteMessage = $('<br clear="all"><h1 id="submitvotebutton">Click your favorite Picture!</h1><br clear="all"')
+  $("#contentcontainer").append(voteMessage);
+  for(var i = 0; i < participations.length; i++) {
     var userWrap  = $('<div class ="voteImage userimagecontainer"></div>');
     var userImage = $('<img class="userimage" alt=Web cam"/><br />');
-    userImage.attr('src', 'http://i.imgur.com/' + images[i].face + '.png');
+    userImage.attr('src', 'http://i.imgur.com/' + participations[i].face + '.png');
+    userWrap.attr('p_id', participations[i].id);
     userWrap.append(userImage);
     $(div1).append(userWrap);
+    $(userWrap).click(function() {
+      console.log('triggering vote');
+      $(document).trigger('sendVote', {p_id: parseInt(userWrap.attr('p_id'))});
+      removeVoteButton();
+    });
   }
 
-  var voteButton = $('<br clear = "all" /><input class = "button" id = "submitvotebutton" type="submit" value="" />').click(removeVoteButton);
-  $("#contentcontainer").append(voteButton);
 }
 
 function removeVoteButton() {

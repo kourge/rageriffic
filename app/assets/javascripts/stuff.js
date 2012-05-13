@@ -42,6 +42,11 @@ function beginVoting() {
   }, INTERVAL);
 }
 
+// get passed an object {p_id: ___}
+function vote(p_id) {
+  $.getJSON('/rounds/vote/' + id, p_id);
+}
+
 var params = (function(a) {
   if (a == "") return {};
   var b = {};
@@ -78,6 +83,11 @@ $(document).bind('imageUploaded', function(event, url) {
 
 $(document).bind('startClicked', function() {
   startGame();
+});
+
+$(document).bind('sendVote', function(e, p_id) {
+  console.log(p_id);
+  vote(p_id);
 });
 
 if (ENABLE_POLLING) timer = window.setInterval(function poll() {

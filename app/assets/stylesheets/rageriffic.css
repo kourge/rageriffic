@@ -157,7 +157,9 @@ input {
     padding-top: 28px;
     position: relative;
     top: 20px;
-    background-image: url('vote.png');
+    text-align: center;
+    margin: auto auto auto auto;
+    /* background-image: url('vote.png');*/
 }
 
 #ragefacecontainer, #winnercontainer, #ragefacecontainerX {
