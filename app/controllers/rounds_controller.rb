@@ -69,8 +69,8 @@ class RoundsController < ApplicationController
     cur_round = Round.find(params[:id])
     ps = cur_round.participations
     vs = cur_round.votes
-
     res = {}
+
     res["voting_done"] = (ps.size <= vs.size)
 
     render :json => res.to_json
@@ -98,6 +98,9 @@ class RoundsController < ApplicationController
     end
 
     render :json => boss.to_json
+  end
 
+  def round
+    render :json => Round.find(params[:id]).to_json
   end
 end

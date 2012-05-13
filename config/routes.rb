@@ -2,6 +2,7 @@ Rageriffic::Application.routes.draw do
   root  :to                         => 'rounds#start_game'
   match 'rounds/start_game'         => 'rounds#start_game'
   match 'rounds/join/:id'           => 'rounds#join'
+  match 'rounds/round/:id'          => 'rounds#round'
   match 'rounds/participations/:id' => 'rounds#participations'
   match 'rounds/state/:id'          => 'rounds#state'
   match 'rounds/start/:id'          => 'rounds#start'
