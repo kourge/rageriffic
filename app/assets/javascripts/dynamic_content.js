@@ -79,9 +79,16 @@ function removeVoteButton() {
 
 
 function switchToWinner(e, data) {
-  $("#contentcontainer :not(:first-child)").remove();
-  var winner = $('<div class="imagediv winnercontainer"><img id = "winner" src = "http://alltheragefaces.com/img/faces/large/happy-oh-stop-it-you-l.png"  alt = "Rageriffic" />');
+  console.log("Switching to Winner Image");
+  var winnerImageUrl = data.face;
+  $("#contentcontainer :not(:first-child) ").remove();
+  var winnerWrapper = $('<div class="imagediv winnercontainer">');
+  var winnerImage = $('<img id="winner" alt="Rageriffic" />');
+  winnerWrapper.append(winnerImage);
+  console.log(winnerImageUrl);
+  window.winnerImage = winnerImage
+  winnerImage.attr('src', 'http://i.imgur.com/' + winnerImageUrl + ".png");
   $("#contentcontainer").append("<h1>WINNER!</h1>");
-  $("#contentcontainer").append(winner);
+  $("#contentcontainer").append(winnerWrapper);
 }
 

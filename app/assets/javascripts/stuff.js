@@ -86,7 +86,6 @@ $(document).bind('startClicked', function() {
 });
 
 $(document).bind('sendVote', function(e, p_id) {
-  console.log(p_id);
   vote(p_id);
 });
 
