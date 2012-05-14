@@ -11,7 +11,7 @@ she can start the game through the start button.
 
 Everyone will be given **ten seconds** to take a picture of themselves using their webcams.
 When everyone has taken their own picture, all users will be presented with a voting screen.
-The user with the most votes wins!.
+The user with the most votes wins!
 
 # Authors
 
@@ -33,13 +33,7 @@ Want to deploy it yourself? You need:
 * PostgreSQL
 * A slew of gems that are in the gem file
 
-run
-
-`rake setup`
-
-and
-
-`rails server`
+Run `rake setup` and `rails server`
 
 and you're good to hit it on localhost:3000.
 
