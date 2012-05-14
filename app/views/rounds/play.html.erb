@@ -8,9 +8,32 @@
     <%=javascript_include_tag "dynamic_content.js" %>
     <%=javascript_include_tag "jquery.webcam.js" %>
     <%=javascript_include_tag "test.js" %>
+    <%=javascript_include_tag "jquery-ui-1.8.20.custom.min.js" %>
+    <%=stylesheet_link_tag "jquery.ui.chatbox.css" %>
+    <%=javascript_include_tag "jquery.ui.chatbox.js" %>
+    <%=javascript_include_tag "http://chat-serv.heroku.com/nowjs/now.js" %>
+    <script>
+      $(document).ready(function() {
+        var username = window.name;
+
+        $("#chat_div").chatbox({id : "chat_div",
+                                  title : "Chat",
+                                  user : username,
+                                  offset: 4,
+                                  messageSent: function(id, user, msg){
+                                       now.distributeMessage(msg);
+                                  }});
+
+        now.name = username;
+        now.receiveMessage = function(name, message) {
+          $("#chat_div").chatbox("option", "boxManager").addMsg(name, message);
+        }
+      });
+    </script>
   </head>
   
   <body>
+    <div id = "chat_div"></div>
         <div id="addfriends">
             <h1 class="h1words">ask your friends to join via: <strong><%= @url %></strong></h1>
         </div>
