@@ -2,6 +2,8 @@
 
 **rageriffic.heroku.com**
 
+![example](https://github.com/kourge/rageriffic/raw/master/public/example.png)
+
 Visit the root to get a prompt to start a new game. Creating a game
 will give you a link that can be distributed to your friends who can
 join you to compete. When the host believes that enough people have joined,
