@@ -74,10 +74,10 @@ function switchToVote(e, data) {
   for(var i = 0; i < participations.length; i++) {
     var userWrap  = $('<div class ="voteImage userimagecontainer"></div>');
     var userImage = $('<img class="userimage" alt=Web cam"/><br />');
-    if (participations[i].face === null) {
-      userImage.attr('src', 'http://i.imgur.com/' + 'k6jgD' + '.png');
-    } else {
+    if (participations[i].face) {
       userImage.attr('src', 'http://i.imgur.com/' + participations[i].face + '.png');
+    } else {
+      userImage.attr('src', 'http://i.imgur.com/k6jgD.png');
     }
     userWrap.attr('p_id', participations[i].id);
     userWrap.append(userImage);
@@ -106,7 +106,11 @@ function switchToWinner(e, data) {
   winnerWrapper.append(winnerImage);
   window.winnerImage = winnerImage
   console.log(data)
-  winnerImage.attr('src', 'http://i.imgur.com/' + winnerImageUrl + ".png");
+  if (winnerImageUrl) {
+    winnerImage.attr('src', 'http://i.imgur.com/' + winnerImageUrl + ".png");
+  } else {
+    winnerImage.attr('src', 'http://i.imgur.com/k6jgD.png');
+  }
   $("#contentcontainer").append("<h1>"+ data.name.toUpperCase() + " IS THE WINNER!!!</h1>");
   $("#contentcontainer").append(winnerWrapper);
   $("#contentcontainer").append($('<h1><a href="http://rageriffic.heroku.com">Go back to make a new game?</a></h1>'));
