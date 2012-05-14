@@ -21,13 +21,20 @@
                                   user : username,
                                   offset: 4,
                                   messageSent: function(id, user, msg){
-                                       now.distributeMessage(msg);
+                                       now.distributeMessageToRound(msg);
                                   }});
 
         now.name = username;
+        now.round = window.rid;
+
         now.receiveMessage = function(name, message) {
           $("#chat_div").chatbox("option", "boxManager").addMsg(name, message);
-        }
+        };
+
+        now.receiveMessageIfSameRound = function(name, message, round) {
+          if (round === now.round)
+            now.receiveMessage(name, message);
+        };
       });
     </script>
   </head>
