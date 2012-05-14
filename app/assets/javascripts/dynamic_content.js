@@ -74,7 +74,11 @@ function switchToVote(e, data) {
   for(var i = 0; i < participations.length; i++) {
     var userWrap  = $('<div class ="voteImage userimagecontainer"></div>');
     var userImage = $('<img class="userimage" alt=Web cam"/><br />');
-    userImage.attr('src', 'http://i.imgur.com/' + participations[i].face + '.png');
+    if (participations[i].face === null) {
+      userImage.attr('src', 'http://i.imgur.com/' + 'k6jgD' + '.png');
+    } else {
+      userImage.attr('src', 'http://i.imgur.com/' + participations[i].face + '.png');
+    }
     userWrap.attr('p_id', participations[i].id);
     userWrap.append(userImage);
     $(div1).append(userWrap);
