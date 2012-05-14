@@ -51,7 +51,7 @@ function switchToCapture() {
 
 function takePicture() {
   $(".imagetitle").remove();
-  $("h1").html("waiting for others to submit...");
+  $("imagediv").html("waiting for others to submit...");
 }
 
 function switchToVote(e, data) {
