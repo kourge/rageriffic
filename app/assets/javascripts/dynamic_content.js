@@ -105,5 +105,6 @@ function switchToWinner(e, data) {
   winnerImage.attr('src', 'http://i.imgur.com/' + winnerImageUrl + ".png");
   $("#contentcontainer").append("<h1>"+ data.name.toUpperCase() + " IS THE WINNER!!!</h1>");
   $("#contentcontainer").append(winnerWrapper);
+  $("#contentcontainer").append($('<h1><a href="http://rageriffic.heroku.com">Go back to make a new game?</a></h1>'));
 }
 
