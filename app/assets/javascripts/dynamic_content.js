@@ -54,7 +54,7 @@ function takePicture() {
   setTimeout( function() {
     $("#pictip1").html("waiting for others to submit...");
     $("#pictip2").html("");
-  }, 2000);
+  }, 4000);
 }
 
 function switchToVote(e, data) {
