@@ -4,18 +4,15 @@
         <title>Rageriffic</title>
         <%= stylesheet_link_tag "rageriffic.css" %>
     </head>
-    
-    
     <body>
         <div id = "contentcontainer">
+      <h1 id="linkbar"><div class="linkbutton"><%= link_to "New Game", :controller => :rounds, :action => :start_game %></div><div class="linkbutton"><%= link_to "About", :controller => :game, :action => :about %></div></h1>
             <div id="welcome" class = "title"><%= image_tag "welcome.png" %></div>
-            
             <div class="imagediv">
               <h1 class="h1word">Your friends finished this game already :(</h1>
               <h1> Go ask them for a new link! </h1>
             </div>
             </form>
-
         </div>
     </body>
 </html>
