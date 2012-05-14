@@ -1,6 +1,6 @@
 # rageriffic lets you imitate angry meme faces from the internets
 
-**rageriffic.heroku.com**
+[rageriffic.heroku.com](http://rageriffic.heroku.com)
 
 ![example](https://github.com/kourge/rageriffic/raw/master/public/example.png)
 
