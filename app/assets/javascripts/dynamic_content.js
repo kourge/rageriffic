@@ -32,8 +32,8 @@ function switchToCapture() {
   $("#camerainterface").removeClass('hidden');
   var cameraButton = $('<button onclick = "webcam.capture(3); void(0);" class="button" id="camerabutton"></button>').click(takePicture);
   $("#contentcontainer h1").remove()
-  var instr = $('<h1>try to imitate the rage face</h1>');
-  var tip = $('<h1>When you hit the button, you have 3 seconds to pose<h1>');
+  var instr = $('<h1 id="pictip1">try to imitate the rage face</h1>');
+  var tip = $('<h1 id="pictip2">When you hit the button, you have 3 seconds to pose<h1>');
   $(tip).insertAfter($("#logo"));
   $(instr).insertAfter($("#logo"));
 
@@ -51,7 +51,8 @@ function switchToCapture() {
 
 function takePicture() {
   $(".imagetitle").remove();
-  $("#imagediv").html("waiting for others to submit...");
+  $("pictip1").html("waiting for others to submit...");
+  $("pictip2").html("");
 }
 
 function switchToVote(e, data) {
