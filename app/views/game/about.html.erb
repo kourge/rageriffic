@@ -5,24 +5,25 @@
         <%= stylesheet_link_tag "rageriffic.css" %>
         <%=javascript_include_tag "jquery-1.7.2.min.js" %>
     </head>
-    
-    
     <body>
         <div id = "contentcontainer">
           <h1 id="linkbar"><div class="linkbutton"><%= link_to "New Game", "/" %></div><div class="linkbutton"><%= link_to "About", "about" %></div></h1>
-            <div id="welcome" class = "title"><%= image_tag "welcome.png" %></div>
-            <div class="imagediv">
-              <h1 class="h1word">About<h1>
-              <h1 class="h1word">Team Rageriffic is a bundle of University of Washington Students<h1>
-              <h1 class="h1word">This was made for the 24 hour Hack U hackathon</h1>
-              <div id="aboutrow">
-                <div class="userimagecontainer about_images"><h1 class="h1word">Jolie Chen<%= image_tag "jolie.jpg"%><h1></div>
-                <div class="userimagecontainer about_images"><h1 class="h1word">Michael Zhou<%= image_tag "michael.jpg"%><h1></div>
-                <div class="userimagecontainer about_images"><h1 class="h1word">Stanley Wang<%= image_tag "stanley.jpg"%><h1></div>
-                <div class="userimagecontainer about_images"><h1 class="h1word">David Mah<%= image_tag "david.jpg"%><h1></div>
-                <div class="userimagecontainer about_images"><h1 class="h1word">Wilson Lee<%= image_tag "wilson.jpg"%><h1></div>
-              </div>
+          <div id="welcome" class = "title"><%= image_tag "welcome.png" %></div>
+          <div class="imagediv">
+            <p>
+            <h1 class="h1word"><b>About Us</b></h1>
+            <h1 class="h1word">Team Rageriffic is a bundle of University of Washington students.</h1>
+            <h1 class="h1word">This was made for the 24 hour Hack U hackathon on May 11-12, 2012.</h1>
+            </p>
+
+            <div id="aboutrow">
+              <div class="userimagecontainer about_images"><h1 class="h1word">Jolie Chen<%= image_tag "jolie.jpg"%></h1></div>
+              <div class="userimagecontainer about_images"><h1 class="h1word">Michael Zhou<%= image_tag "michael.jpg"%></h1></div>
+              <div class="userimagecontainer about_images"><h1 class="h1word">Stanley Wang<%= image_tag "stanley.jpg"%></h1></div>
+              <div class="userimagecontainer about_images"><h1 class="h1word">David Mah<%= image_tag "david.jpg"%></h1></div>
+              <div class="userimagecontainer about_images"><h1 class="h1word">Wilson Lee<%= image_tag "wilson.jpg"%></h1></div>
             </div>
+          </div>
         </div>
     </body>
 </html>

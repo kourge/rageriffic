@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120512142551) do
+ActiveRecord::Schema.define(:version => 20120512220736) do
 
   create_table "participations", :force => true do |t|
     t.integer  "round_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120512142551) do
     t.string   "face"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   create_table "presets", :force => true do |t|
@@ -34,14 +35,14 @@ ActiveRecord::Schema.define(:version => 20120512142551) do
     t.integer  "winner_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "is_frozen"
   end
 
   create_table "votes", :force => true do |t|
     t.integer  "round_id"
-    t.integer  "voter"
-    t.integer  "votee"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "participation_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end
