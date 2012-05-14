@@ -228,3 +228,34 @@ input {
     position: relative;
     top: 130px;
 }
+
+.about_images {
+  display: inline;
+  float: left;
+}
+
+#aboutrow {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #B0B0B0;
+}
+
+#linkbar {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+.linkbutton {
+  display: inline;
+  margin-left: 50px;
+  margin-right: 50px;
+}
