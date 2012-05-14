@@ -9,7 +9,7 @@ class RoundsController < ApplicationController
     cur_round = (params[:id].nil? ? Round.new : Round.find(params[:id]))
     cur_round.save
     if cur_round.is_frozen
-      redirect_to :controller => 'game', :action => 'start_game'
+      redirect_to :controller => 'rounds', :action => 'late'
     else
       # LOL HARD CODING URLS
       @url = File.join(request.base_url, "rounds", "#{cur_round.id}")
@@ -102,5 +102,9 @@ class RoundsController < ApplicationController
 
   def round
     render :json => Round.find(params[:id]).to_json
+  end
+
+  def late
+
   end
 end
