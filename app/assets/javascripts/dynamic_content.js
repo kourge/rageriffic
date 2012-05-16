@@ -113,6 +113,6 @@ function switchToWinner(e, data) {
   }
   $("#contentcontainer").append("<h1>"+ data.name.toUpperCase() + " IS THE WINNER!!!</h1>");
   $("#contentcontainer").append(winnerWrapper);
-  $("#contentcontainer").append($('<h1><a href="http://rageriffic.heroku.com">Go back to make a new game?</a></h1>'));
+  $("#contentcontainer").append($('<h1><a id="createnewgame" href="http://rageriffic.heroku.com">Go back to make a new game?</a></h1>'));
 }
 
