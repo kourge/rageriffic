@@ -44,8 +44,8 @@
         <div id="addfriends">
             <h1 class="h1words">ask your friends to join via: <strong><%= @url %></strong></h1>
         </div>
-    <div id = "contentcontainer">
       <h1 id="linkbar"><div class="linkbutton"><%= link_to "New Game", :controller => :rounds, :action => :start_game %></div><div class="linkbutton"><%= link_to "About", :controller => :game, :action => :about %></div></h1>
+    <div id = "contentcontainer">
 
         <div id = "welcome" class="title"><%= image_tag "welcome.png" %></div>
         <div id = "logo" class="title hidden"><%= image_tag "ragerifficlogo.png" %></div>
@@ -53,8 +53,7 @@
 
         <div class="imagediv">
             <h1 class="h1words">waiting for others to join</h1>
-            <h1 class="h1words">be vain for a little bit.</h1>
-            <h1 class="h1words">There are <span id="joincount"></span> participants.</h1>
+            <h1 class="h1words">be vain for a little bit</h1>
         </div>
 
         <div id="camerainterface">
@@ -134,6 +133,7 @@
         <!--<button onclick="webcam.capture(3);void(0);" class="button" id="takepicture"></button>-->
         <div id="status"></div>
       </div>
+      <h1 class="h1words">there are <span id="joincount"></span> participants</h1>
       <br clear = "all" />
 
     </div>
